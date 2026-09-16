@@ -1,0 +1,310 @@
+{
+  "library_version": "1.0",
+  "policy": "Only CC0 or unequivocal public-domain assets. Wikimedia Commons file page retained as provenance.",
+  "assets": {
+    "bridge": {
+      "file": "Bridge of a Modern Cruise Ship.jpg",
+      "title": "Bridge of a Modern Cruise Ship",
+      "creator": "Richard Weil",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bridge_of_a_Modern_Cruise_Ship.jpg",
+      "use": "Bridge/watchkeeping, lookout, responsibility and verification"
+    },
+    "cargo": {
+      "file": "Cargo ship.jpg",
+      "title": "Cargo ship",
+      "creator": "Wilfredor",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cargo_ship.jpg",
+      "use": "General power-driven vessel and open-water rules"
+    },
+    "channel_ship": {
+      "file": "Container Ship, English Channel (10509006206).jpg",
+      "title": "Container Ship, English Channel",
+      "creator": "Gary Todd",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Container_Ship,_English_Channel_(10509006206).jpg",
+      "use": "Channel/open-water encounter context"
+    },
+    "narrow": {
+      "file": "US Navy 040629-N-6213R-128 Commanding Officer, USS John C. Stennis (CVN 74), Capt. David H. Buss, keeps close watch as the ship is navigated through the narrow channel into Pearl Harbor, Hawaii.jpg",
+      "title": "USS John C. Stennis navigating a narrow channel",
+      "creator": "U.S. Navy / Mark J. Rebilas",
+      "license": "Public Domain — U.S. Navy federal work",
+      "source": "https://commons.wikimedia.org/wiki/File:US_Navy_040629-N-6213R-128_Commanding_Officer,_USS_John_C._Stennis_(CVN_74),_Capt._David_H._Buss,_keeps_close_watch_as_the_ship_is_navigated_through_the_narrow_channel_into_Pearl_Harbor,_Hawaii.jpg",
+      "use": "Rule 9 narrow channels"
+    },
+    "sail": {
+      "file": "Sailboat in the ocean.jpg",
+      "title": "Sailboat in the ocean",
+      "creator": "Seabee314",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sailboat_in_the_ocean.jpg",
+      "use": "Sailing vessel rules"
+    },
+    "fishing": {
+      "file": "Fishing vessel UK-272.jpg",
+      "title": "Fishing vessel UK-272",
+      "creator": "Tvabutzku1234",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fishing_vessel_UK-272.jpg",
+      "use": "Fishing vessel rules"
+    },
+    "mixed": {
+      "file": "Fishing vessel and container ship.jpg",
+      "title": "Fishing vessel and container ship",
+      "creator": "Tvabutzku1234",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fishing_vessel_and_container_ship.jpg",
+      "use": "Crossing/responsibility between vessel types"
+    },
+    "tug": {
+      "file": "Tugboat with work barge in Tokyo 20110812 2.jpg",
+      "title": "Tugboat with work barge in Tokyo",
+      "creator": "Vantey",
+      "license": "Public Domain — released by author worldwide",
+      "source": "https://commons.wikimedia.org/wiki/File:Tugboat_with_work_barge_in_Tokyo_20110812_2.jpg",
+      "use": "Towing, pushing and manoeuvring"
+    },
+    "pilot": {
+      "file": "Enterprise pilot boat.JPG",
+      "title": "Enterprise pilot boat",
+      "creator": "Alf van Beem",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Enterprise_pilot_boat.JPG",
+      "use": "Pilot vessel"
+    },
+    "fog": {
+      "file": "Margaret Todd in the fog.jpg",
+      "title": "Margaret Todd in the fog",
+      "creator": "Snyder261",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Margaret_Todd_in_the_fog.jpg",
+      "use": "Restricted visibility and fog signals"
+    },
+    "aground": {
+      "file": "Big cargo ship aground.jpg",
+      "title": "Big cargo ship aground",
+      "creator": "Steve Hillebrand / U.S. Fish and Wildlife Service",
+      "license": "Public Domain — author/federal source",
+      "source": "https://commons.wikimedia.org/wiki/File:Big_cargo_ship_aground.jpg",
+      "use": "Anchored/aground vessel context"
+    },
+    "navlights": {
+      "file": "Nr Rule23a.gif",
+      "title": "COLREG Rule 23 navigation-light diagram",
+      "creator": "U.S. Coast Guard",
+      "license": "Public Domain — U.S. Coast Guard federal work",
+      "source": "https://commons.wikimedia.org/wiki/File:Nr_Rule23a.gif",
+      "use": "Lights, definitions and visibility"
+    },
+    "bell": {
+      "file": "Ship bell missile cruiser USS Chancellorsville.jpg",
+      "title": "Ship bell aboard USS Chancellorsville",
+      "creator": "U.S. Navy",
+      "license": "Public Domain — U.S. Navy federal work",
+      "source": "https://commons.wikimedia.org/wiki/File:Ship_bell_missile_cruiser_USS_Chancellorsville.jpg",
+      "use": "Sound-signal equipment"
+    },
+    "flare": {
+      "file": "JASDF U-125A 20090822-05(Signal flare).JPG",
+      "title": "Signal flare",
+      "creator": "Los688",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JASDF_U-125A_20090822-05(Signal_flare).JPG",
+      "use": "Distress signal recognition"
+    },
+    "seaplane": {
+      "file": "XJR2F-1 NATC NAN1-50.jpg",
+      "title": "Grumman seaplane",
+      "creator": "U.S. Navy",
+      "license": "Public Domain — U.S. Navy federal work",
+      "source": "https://commons.wikimedia.org/wiki/File:XJR2F-1_NATC_NAN1-50.jpg",
+      "use": "Rule 31 seaplanes"
+    },
+    "buoy": {
+      "file": "Red and green light navigation buoys.webp",
+      "title": "Red and green light navigation buoys",
+      "creator": "Wikideas1",
+      "license": "CC0 1.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Red_and_green_light_navigation_buoys.webp",
+      "use": "Project Watch home hub — Buoyage & Marks"
+    }
+  },
+  "rule_mapping": {
+    "1": {
+      "asset": "cargo",
+      "label": "APPLICATION"
+    },
+    "2": {
+      "asset": "bridge",
+      "label": "RESPONSIBILITY"
+    },
+    "3": {
+      "asset": "cargo",
+      "label": "DEFINITIONS"
+    },
+    "4": {
+      "asset": "bridge",
+      "label": "CONDUCT"
+    },
+    "5": {
+      "asset": "bridge",
+      "label": "LOOK-OUT"
+    },
+    "6": {
+      "asset": "channel_ship",
+      "label": "SAFE SPEED"
+    },
+    "7": {
+      "asset": "bridge",
+      "label": "RISK OF COLLISION"
+    },
+    "8": {
+      "asset": "cargo",
+      "label": "AVOIDING ACTION"
+    },
+    "9": {
+      "asset": "narrow",
+      "label": "NARROW CHANNEL"
+    },
+    "10": {
+      "asset": "channel_ship",
+      "label": "TRAFFIC SEPARATION"
+    },
+    "11": {
+      "asset": "bridge",
+      "label": "IN SIGHT"
+    },
+    "12": {
+      "asset": "sail",
+      "label": "SAILING VESSELS"
+    },
+    "13": {
+      "asset": "channel_ship",
+      "label": "OVERTAKING"
+    },
+    "14": {
+      "asset": "cargo",
+      "label": "HEAD-ON"
+    },
+    "15": {
+      "asset": "mixed",
+      "label": "CROSSING"
+    },
+    "16": {
+      "asset": "cargo",
+      "label": "GIVE-WAY"
+    },
+    "17": {
+      "asset": "bridge",
+      "label": "STAND-ON"
+    },
+    "18": {
+      "asset": "mixed",
+      "label": "RESPONSIBILITIES"
+    },
+    "19": {
+      "asset": "fog",
+      "label": "RESTRICTED VISIBILITY"
+    },
+    "20": {
+      "asset": "navlights",
+      "label": "LIGHTS — APPLICATION"
+    },
+    "21": {
+      "asset": "navlights",
+      "label": "LIGHT DEFINITIONS"
+    },
+    "22": {
+      "asset": "navlights",
+      "label": "VISIBILITY OF LIGHTS"
+    },
+    "23": {
+      "asset": "cargo",
+      "label": "POWER-DRIVEN"
+    },
+    "24": {
+      "asset": "tug",
+      "label": "TOWING / PUSHING"
+    },
+    "25": {
+      "asset": "sail",
+      "label": "SAILING / OARS"
+    },
+    "26": {
+      "asset": "fishing",
+      "label": "FISHING VESSELS"
+    },
+    "27": {
+      "asset": "cargo",
+      "label": "NUC / RAM"
+    },
+    "28": {
+      "asset": "cargo",
+      "label": "CONSTRAINED BY DRAUGHT"
+    },
+    "29": {
+      "asset": "pilot",
+      "label": "PILOT VESSELS"
+    },
+    "30": {
+      "asset": "aground",
+      "label": "ANCHOR / AGROUND"
+    },
+    "31": {
+      "asset": "seaplane",
+      "label": "SEAPLANES"
+    },
+    "32": {
+      "asset": "bell",
+      "label": "SOUND DEFINITIONS"
+    },
+    "33": {
+      "asset": "bell",
+      "label": "SOUND EQUIPMENT"
+    },
+    "34": {
+      "asset": "tug",
+      "label": "MANOEUVRING SIGNALS"
+    },
+    "35": {
+      "asset": "fog",
+      "label": "FOG SIGNALS"
+    },
+    "36": {
+      "asset": "bridge",
+      "label": "ATTRACTING ATTENTION"
+    },
+    "37": {
+      "asset": "flare",
+      "label": "DISTRESS"
+    },
+    "38": {
+      "asset": "bridge",
+      "label": "EXEMPTIONS"
+    },
+    "39": {
+      "asset": "cargo",
+      "label": "DEFINITIONS"
+    },
+    "40": {
+      "asset": "bridge",
+      "label": "APPLICATION"
+    },
+    "41": {
+      "asset": "bridge",
+      "label": "VERIFICATION"
+    }
+  },
+  "homepage_mapping": {
+    "SCENARIOS": "bridge",
+    "COLREGS": "cargo",
+    "LIGHTS & SHAPES": "navlights",
+    "SIGNALS": "bell",
+    "BUOYAGE": "buoy",
+    "TSS": "channel_ship",
+    "POWER-DRIVEN SELECTOR": "cargo",
+    "SAILING SELECTOR": "sail"
+  }
+}

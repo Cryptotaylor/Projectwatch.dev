@@ -1,0 +1,99 @@
+PROJECT WATCH — LICENSED IMAGE LIBRARY
+
+Policy: Only CC0 or unequivocal public-domain assets are used in the COLREG Rules 1–41 photographic map.
+
+[bridge] Bridge of a Modern Cruise Ship
+Creator: Richard Weil
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Bridge_of_a_Modern_Cruise_Ship.jpg
+Use: Bridge/watchkeeping, lookout, responsibility and verification
+
+[cargo] Cargo ship
+Creator: Wilfredor
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Cargo_ship.jpg
+Use: General power-driven vessel and open-water rules
+
+[channel_ship] Container Ship, English Channel
+Creator: Gary Todd
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Container_Ship,_English_Channel_(10509006206).jpg
+Use: Channel/open-water encounter context
+
+[narrow] USS John C. Stennis navigating a narrow channel
+Creator: U.S. Navy / Mark J. Rebilas
+Licence: Public Domain — U.S. Navy federal work
+Source: https://commons.wikimedia.org/wiki/File:US_Navy_040629-N-6213R-128_Commanding_Officer,_USS_John_C._Stennis_(CVN_74),_Capt._David_H._Buss,_keeps_close_watch_as_the_ship_is_navigated_through_the_narrow_channel_into_Pearl_Harbor,_Hawaii.jpg
+Use: Rule 9 narrow channels
+
+[sail] Sailboat in the ocean
+Creator: Seabee314
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Sailboat_in_the_ocean.jpg
+Use: Sailing vessel rules
+
+[fishing] Fishing vessel UK-272
+Creator: Tvabutzku1234
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Fishing_vessel_UK-272.jpg
+Use: Fishing vessel rules
+
+[mixed] Fishing vessel and container ship
+Creator: Tvabutzku1234
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Fishing_vessel_and_container_ship.jpg
+Use: Crossing/responsibility between vessel types
+
+[tug] Tugboat with work barge in Tokyo
+Creator: Vantey
+Licence: Public Domain — released by author worldwide
+Source: https://commons.wikimedia.org/wiki/File:Tugboat_with_work_barge_in_Tokyo_20110812_2.jpg
+Use: Towing, pushing and manoeuvring
+
+[pilot] Enterprise pilot boat
+Creator: Alf van Beem
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Enterprise_pilot_boat.JPG
+Use: Pilot vessel
+
+[fog] Margaret Todd in the fog
+Creator: Snyder261
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Margaret_Todd_in_the_fog.jpg
+Use: Restricted visibility and fog signals
+
+[aground] Big cargo ship aground
+Creator: Steve Hillebrand / U.S. Fish and Wildlife Service
+Licence: Public Domain — author/federal source
+Source: https://commons.wikimedia.org/wiki/File:Big_cargo_ship_aground.jpg
+Use: Anchored/aground vessel context
+
+[navlights] COLREG Rule 23 navigation-light diagram
+Creator: U.S. Coast Guard
+Licence: Public Domain — U.S. Coast Guard federal work
+Source: https://commons.wikimedia.org/wiki/File:Nr_Rule23a.gif
+Use: Lights, definitions and visibility
+
+[bell] Ship bell aboard USS Chancellorsville
+Creator: U.S. Navy
+Licence: Public Domain — U.S. Navy federal work
+Source: https://commons.wikimedia.org/wiki/File:Ship_bell_missile_cruiser_USS_Chancellorsville.jpg
+Use: Sound-signal equipment
+
+[flare] Signal flare
+Creator: Los688
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:JASDF_U-125A_20090822-05(Signal_flare).JPG
+Use: Distress signal recognition
+
+[seaplane] Grumman seaplane
+Creator: U.S. Navy
+Licence: Public Domain — U.S. Navy federal work
+Source: https://commons.wikimedia.org/wiki/File:XJR2F-1_NATC_NAN1-50.jpg
+Use: Rule 31 seaplanes
+
+[buoy] Red and green light navigation buoys
+Creator: Wikideas1
+Licence: CC0 1.0
+Source: https://commons.wikimedia.org/wiki/File:Red_and_green_light_navigation_buoys.webp
+Use: Project Watch home hub — Buoyage & Marks
