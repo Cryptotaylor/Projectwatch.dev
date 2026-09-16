@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#031923">
-<title>Project Watch 1.42.3 • Course Completion</title>
+<title>Project Watch 1.46.23 • QA Revision</title>
 <style>
 :root{
   --bg:#02141d;--panel:#07364e;--panel2:#052a3c;--blue:#168bcf;
@@ -16272,6 +16272,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 }
 </style>
 
+<!-- PROJECT WATCH RELEASE: 1.46.23-QA-REVISION | BASE: 1.46.22-COLLISION-CORE -->
 </head>
 <body>
 <div id="vesselSetupModal" class="vesselSetupModal" aria-hidden="true">
@@ -16347,7 +16348,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 </div>
 <div class="app">
 <header>
-  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.22-COLLISION-CORE</div></div>
+  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.23-QA-REVISION</div></div>
   <div class="headerRight">
     <button class="vesselProfileOpen" onclick="openVesselSetup(false)">⚓ MY VESSEL</button>
     <div id="hdrMode">WATCH ONE</div>
@@ -17149,7 +17150,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
       <div id="handoverStrap" class="scenarioHeroStrap">Training vessel • Power-driven vessel</div>
       <div class="collisionHeroActions">
         <button class="beginnerLaunch" onclick="showCollisionTutorial()">NEW TO THIS? • START HERE →</button>
-        <button class="examLaunch" onclick="showCollisionExamCentre()">PROJECT WATCH MOCK EXAMS →</button>
+        <button class="examLaunch" onclick="showCollisionExamCentre()">ASSESSMENT CENTRE →</button>
       </div>
     </div>
     <div class="scenarioConditions">
@@ -17236,7 +17237,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 <section id="collisionExamPage" class="appPage">
   <div class="examHero">
     <div>
-      <div class="ver">PROJECT WATCH • COLLISION EXAMINATION SUITE</div>
+      <div class="ver">PROJECT WATCH • ASSESSMENT CENTRE</div>
       <h1>Mock assessment. Original questions. Official-rule basis.</h1>
       <p>This is an independent Project Watch assessment system. It is not an RYA or MCA examination. Questions and diagrams are original to Project Watch and are checked against the COLREGs and current MCA syllabus/assessment guidance.</p>
     </div>
@@ -17254,12 +17255,12 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
     <button id="examTabKnowledge" class="active" onclick="showCollisionExamMode('knowledge')">01 • KNOWLEDGE MOCK</button>
     <button id="examTabOral" onclick="showCollisionExamMode('oral')">02 • CAPTAIN'S ORAL</button>
     <button id="examTabPractical" onclick="showCollisionExamMode('practical')">03 • PRACTICAL SIMULATOR</button>
-    <button onclick="showModule('scenarios')">← COLLISION SCENARIOS</button>
+    <button onclick="showModule('scenarios')">← TRAINING SIMULATOR</button>
   </div>
 
   <div id="collisionKnowledgeExam" class="collisionExamSection active">
     <div class="examIntroGrid">
-      <div class="examIntroCard"><span>20</span><b>RANDOM QUESTIONS</b><small>Balanced across the collision syllabus.</small></div>
+      <div class="examIntroCard"><span>20</span><b>RANDOM QUESTIONS</b><small>Balanced across the collision syllabus. A fresh set is drawn from the larger Project Watch bank each run.</small></div>
       <div class="examIntroCard"><span>90%</span><b>PROJECT WATCH PASS</b><small>Chosen to match the current MCA Part A COLREG topic threshold, but this is not an MCA examination.</small></div>
       <div class="examIntroCard"><span>!</span><b>CRITICAL-FAIL LOGIC</b><small>An unsafe answer to a designated safety-critical item prevents a pass.</small></div>
     </div>
@@ -17274,7 +17275,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 
   <div id="collisionOralExam" class="collisionExamSection">
     <div class="oralHeader">
-      <div><div class="ver">STRUCTURED ORAL BOARD</div><h2>Explain what you would do — and why.</h2><p>Eight randomly selected oral-style collision situations. Choose the response that best matches the complete answer. Full model reasoning is withheld until the end.</p></div>
+      <div><div class="ver">STRUCTURED ORAL BOARD</div><h2>Explain what you would do — and why.</h2><p>Eight randomly selected oral-style collision situations. A fresh set is drawn from the oral question bank each run. Choose the response that best matches the complete answer. Full model reasoning is withheld until the end.</p></div>
       <button class="big" onclick="startCollisionOralExam()">START NEW ORAL MOCK</button>
     </div>
     <div id="coQuestionArea" class="examQuestionArea">
@@ -20790,6 +20791,10 @@ let crLesson=0,crLessonsFinished=0,crQuizIndex=0,crQuizScore=0,crQuizAnswered=fa
 function showColregsTutorial(){
  document.querySelectorAll('.appPage.active,.screen.active').forEach(p=>p.classList.remove('active'));
  updateHeaderNav('course');$('colregsTutorialPage').classList.add('active');
+ const lessonNav=$('crLessonList');
+ const lessonCard=document.querySelector('#colregsTutorialPage .stage2LessonCard');
+ if(lessonNav)lessonNav.style.display='';
+ if(lessonCard)lessonCard.style.display='';
  crLesson=Math.max(0,Math.min(5,crLesson||0));
  crLessonsFinished=Math.max(0,Math.min(6,crLessonsFinished||0));
  renderCrLesson();window.scrollTo({top:0,behavior:'smooth'});
@@ -20857,6 +20862,12 @@ function finishStage2Teaching(){
  const k=$('crKnowledge'),area=$('crQuizArea');
  if(k)k.classList.remove('locked');
  if(area)area.innerHTML=crQuizHTML();
+ // QA 1.46.23: once the final check starts, remove the teaching answer cues
+ // (especially the Rule 9 / 10 / 19 summary) from the assessment view.
+ const lessonNav=$('crLessonList');
+ const lessonCard=document.querySelector('#colregsTutorialPage .stage2LessonCard');
+ if(lessonNav)lessonNav.style.display='none';
+ if(lessonCard)lessonCard.style.display='none';
 
  const nb=$('crNextBtn');
  if(nb){nb.textContent='FINAL CHECK UNLOCKED ✓';nb.disabled=true}
@@ -23303,7 +23314,7 @@ body.pw-collision-watch-active #pwLiveVesselIdentity{display:block}
    Vessel operating state is chosen on the briefing screen and locked for the live watch.
    No course-progress/completion/storage writes are introduced here. */
 (function(){
- const BUILD='1.46.22-COLLISION-CORE';
+ const BUILD='1.46.23-QA-REVISION';
 
  function visible(id){
    const e=document.getElementById(id);
@@ -23642,6 +23653,6 @@ h3,h4,h5,h6,.cardTitle,.moduleTitle,.scenarioTitle{
 
 
 <style>.scenarioPhoto,.scenarioGeometry,.scenarioPhotoShade,.scenarioAspectChip,.scenarioVisualTag{display:none!important}</style>
-<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.22-COLLISION-CORE';</script>
-<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.22-COLLISION-CORE';</script>
+<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.23-QA-REVISION';</script>
+<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.23-QA-REVISION';</script>
 </body></html>
