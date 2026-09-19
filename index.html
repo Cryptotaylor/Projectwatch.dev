@@ -22636,7 +22636,7 @@ const SIG_FINAL_QUIZ=[
 ];
 let sigLessonIndex=0,sigLessonsFinished=0,sigFinalIndex=0,sigFinalScore=0,sigFinalAnswered=false;
 function sigLessonsComplete(){return sigLessonsFinished>=SIG_LESSONS.length}
-function renderSigLessons(){const root=$('sigLessonApp');if(!root)return;const l=SIG_LESSONS[sigLessonIndex],next=Math.min(5,sigLessonsFinished);root.innerHTML=`<div class="sigLessonHead"><div><div class="ver">STAGE 4 • LESSON ${sigLessonIndex+1} / 6</div><h3>${l.title}</h3><div class="note">${l.sub}</div></div></div><div class="sigLessonNav">${SIG_LESSONS.map((x,i)=>`<button class="${i===sigLessonIndex?'active':''} ${i<sigLessonsFinished?'done':''}" ${i>next?'disabled':''} onclick="sigSelectLesson(${i})">${String(i+1).padStart(2,'0')}<br>${i<sigLessonsFinished?'✓ DONE':'LESSON'}</button>`).join('')}</div><div class="sigLessonCard"><p>${l.intro}</p>${l.facts.map(f=>`<div class="sigFact"><b>${f[0]}</b><p>${f[1]}</p></div>`).join('')}<div class="sigLessonActions">${l.play.map(id=>{let x=PW_SOUND_MASTER.find(z=>z.id===id);return x&&x.seq?.length?`<button onclick="playDefinedSignal('${id}')">🔊 ${x.pattern} • ${x.title}</button>`:''}).join('')}<button class="big" onclick="sigFinishLesson()">${sigLessonIndex<sigLessonsFinished?'LESSON COMPLETE ✓':sigLessonIndex===5?'COMPLETE LESSON 6':'COMPLETE & CONTINUE →'}</button></div></div><div style="margin-top:14px">${sigLessonsComplete()?'<button class="big" onclick="showSignalSection(\'quiz\')">OPEN 10-QUESTION FINAL CHECK →</button>':''}</div>`}
+function renderSigLessons(){const root=$('sigLessonApp');if(!root)return;const l=SIG_LESSONS[sigLessonIndex],next=Math.min(SIG_LESSONS.length-1,sigLessonsFinished);root.innerHTML=`<div class="sigLessonHead"><div><div class="ver">STAGE 4 • LESSON ${sigLessonIndex+1} / ${SIG_LESSONS.length}</div><h3>${l.title}</h3><div class="note">${l.sub}</div></div></div><div class="sigLessonNav">${SIG_LESSONS.map((x,i)=>`<button class="${i===sigLessonIndex?'active':''} ${i<sigLessonsFinished?'done':''}" ${i>next?'disabled':''} onclick="sigSelectLesson(${i})">${String(i+1).padStart(2,'0')}<br>${i<sigLessonsFinished?'✓ DONE':'LESSON'}</button>`).join('')}</div><div class="sigLessonCard"><p>${l.intro}</p>${l.facts.map(f=>{const pat=/^[•—]/.test(f[0]);return `<div class="sigFact${pat?' sigPatternFact':''}"><b>${f[0]}</b><p>${f[1]}</p></div>`}).join('')}<div class="sigLessonActions">${l.play.map(id=>{let x=PW_SOUND_MASTER.find(z=>z.id===id);return x&&x.seq?.length?`<button onclick="playDefinedSignal('${id}')">🔊 ${x.pattern} • ${x.title}</button>`:''}).join('')}<button class="big" onclick="sigFinishLesson()">${sigLessonIndex<sigLessonsFinished?'LESSON COMPLETE ✓':sigLessonIndex===5?'COMPLETE LESSON 6':'COMPLETE & CONTINUE →'}</button></div></div><div style="margin-top:14px">${sigLessonsComplete()?'<button class="big" onclick="showSignalSection(\'quiz\')">OPEN 10-QUESTION FINAL CHECK →</button>':''}</div>`}
 function sigSelectLesson(i){if(i<=Math.min(5,sigLessonsFinished)){sigLessonIndex=i;renderSigLessons();window.scrollTo({top:0,behavior:'smooth'})}}
 function sigFinishLesson(){sigLessonsFinished=Math.max(sigLessonsFinished,sigLessonIndex+1);if(sigLessonIndex<5)sigLessonIndex++;renderSigLessons()}
 function renderSoundMaster(){let g=$('soundMasterGrid');if(!g)return;g.innerHTML=PW_SOUND_MASTER.map(s=>`<div class="sigCard soundLibCard"><div class="soundGroup">RULE ${s.rule}</div><h4>${s.title}</h4><div class="sigPattern">${s.pattern}</div><p>${s.meaning}</p>${s.seq?.length?`<button onclick="playDefinedSignal('${s.id}')">🔊 PLAY SIGNAL</button>`:'<span class="note">Reference entry</span>'}</div>`).join('')}
@@ -24085,8 +24085,8 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  window.ttRender=function(){if(typeof baseRender==='function')baseRender.apply(this,arguments);renderPlate();};
  window.ttRunDemo=renderPlate; window.ttDraw=renderPlate;
  window.PW_TSS_TEACHING_PLATE_RENDERER={version:'1.46.31',render:renderPlate,source:'approved-nine-plate-visual-master'};
- window.PROJECT_WATCH_BUILD='1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
- const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ window.PROJECT_WATCH_BUILD='1.46.39-STAGE4-SEVEN-LESSON-FIX';
+ const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.39-STAGE4-SEVEN-LESSON-FIX';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
  try{if($('tssTutorialPage')?.classList.contains('active'))renderPlate();}catch(e){console.error(e)}
 })();
@@ -24150,8 +24150,8 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  // Refresh currently rendered legacy areas if present.
  try{ if(typeof renderTSS==='function') renderTSS(); }catch(e){console.error(e)}
  window.PW_TSS_LEGACY_VISUAL_REFRESH={version:'1.46.32',modes:['base','correct','wrong','join','busy']};
- window.PROJECT_WATCH_BUILD='1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
- const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ window.PROJECT_WATCH_BUILD='1.46.39-STAGE4-SEVEN-LESSON-FIX';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.39-STAGE4-SEVEN-LESSON-FIX';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24189,9 +24189,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    $('tssResult').className='quizResult';
  };
  window.PW_TSS_APPROVED_QUESTION_GRAPHICS={version:'1.46.33',questions:[1,4]};
- window.PROJECT_WATCH_BUILD='1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ window.PROJECT_WATCH_BUILD='1.46.39-STAGE4-SEVEN-LESSON-FIX';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ if(vb)vb.textContent='BUILD 1.46.39-STAGE4-SEVEN-LESSON-FIX';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24277,9 +24277,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    };
  }
  window.PW_STAGE7_NEUTRAL_ASSESSMENT_GRAPHICS={version:'1.46.34',questions:[3,5,6,7,10]};
- window.PROJECT_WATCH_BUILD='1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ window.PROJECT_WATCH_BUILD='1.46.39-STAGE4-SEVEN-LESSON-FIX';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ if(vb)vb.textContent='BUILD 1.46.39-STAGE4-SEVEN-LESSON-FIX';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24329,9 +24329,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  document.addEventListener('click',()=>setTimeout(addBackToTSS,0));
  setTimeout(addBackToTSS,0);
 
- window.PROJECT_WATCH_BUILD='1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ window.PROJECT_WATCH_BUILD='1.46.39-STAGE4-SEVEN-LESSON-FIX';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.38-STAGE4-PLAIN-ENGLISH-STATUS';
+ if(vb)vb.textContent='BUILD 1.46.39-STAGE4-SEVEN-LESSON-FIX';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24433,6 +24433,26 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
     grid-template-areas:"status" "explain" "next";
   }
   #sigStage4Final .sigFinalResult > button{width:100%}
+}
+</style>
+
+
+<style id="pw-stage4-pattern-emphasis-14639">
+#sigLessonApp .sigPatternFact b{
+  display:block;
+  font-size:25px !important;
+  line-height:1.15 !important;
+  letter-spacing:.12em;
+  margin-bottom:7px;
+  color:#f3fbff;
+}
+#sigLessonApp .sigPatternFact p{
+  font-size:17px !important;
+  line-height:1.45 !important;
+}
+#sigLessonApp .sigLessonActions > button:not(.big){
+  font-size:17px !important;
+  line-height:1.35 !important;
 }
 </style>
 
