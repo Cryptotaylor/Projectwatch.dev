@@ -24084,8 +24084,8 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  window.ttRender=function(){if(typeof baseRender==='function')baseRender.apply(this,arguments);renderPlate();};
  window.ttRunDemo=renderPlate; window.ttDraw=renderPlate;
  window.PW_TSS_TEACHING_PLATE_RENDERER={version:'1.46.31',render:renderPlate,source:'approved-nine-plate-visual-master'};
- window.PROJECT_WATCH_BUILD='1.46.36-SOUND-AUDIO-ASSESSMENT';
- const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.36-SOUND-AUDIO-ASSESSMENT';
+ window.PROJECT_WATCH_BUILD='1.46.37-STAGE4-LAYOUT-NORMALISATION';
+ const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.37-STAGE4-LAYOUT-NORMALISATION';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
  try{if($('tssTutorialPage')?.classList.contains('active'))renderPlate();}catch(e){console.error(e)}
 })();
@@ -24149,8 +24149,8 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  // Refresh currently rendered legacy areas if present.
  try{ if(typeof renderTSS==='function') renderTSS(); }catch(e){console.error(e)}
  window.PW_TSS_LEGACY_VISUAL_REFRESH={version:'1.46.32',modes:['base','correct','wrong','join','busy']};
- window.PROJECT_WATCH_BUILD='1.46.36-SOUND-AUDIO-ASSESSMENT';
- const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.36-SOUND-AUDIO-ASSESSMENT';
+ window.PROJECT_WATCH_BUILD='1.46.37-STAGE4-LAYOUT-NORMALISATION';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.37-STAGE4-LAYOUT-NORMALISATION';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24188,9 +24188,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    $('tssResult').className='quizResult';
  };
  window.PW_TSS_APPROVED_QUESTION_GRAPHICS={version:'1.46.33',questions:[1,4]};
- window.PROJECT_WATCH_BUILD='1.46.36-SOUND-AUDIO-ASSESSMENT';
+ window.PROJECT_WATCH_BUILD='1.46.37-STAGE4-LAYOUT-NORMALISATION';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.36-SOUND-AUDIO-ASSESSMENT';
+ if(vb)vb.textContent='BUILD 1.46.37-STAGE4-LAYOUT-NORMALISATION';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24276,9 +24276,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    };
  }
  window.PW_STAGE7_NEUTRAL_ASSESSMENT_GRAPHICS={version:'1.46.34',questions:[3,5,6,7,10]};
- window.PROJECT_WATCH_BUILD='1.46.36-SOUND-AUDIO-ASSESSMENT';
+ window.PROJECT_WATCH_BUILD='1.46.37-STAGE4-LAYOUT-NORMALISATION';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.36-SOUND-AUDIO-ASSESSMENT';
+ if(vb)vb.textContent='BUILD 1.46.37-STAGE4-LAYOUT-NORMALISATION';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24328,11 +24328,111 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  document.addEventListener('click',()=>setTimeout(addBackToTSS,0));
  setTimeout(addBackToTSS,0);
 
- window.PROJECT_WATCH_BUILD='1.46.36-SOUND-AUDIO-ASSESSMENT';
+ window.PROJECT_WATCH_BUILD='1.46.37-STAGE4-LAYOUT-NORMALISATION';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.36-SOUND-AUDIO-ASSESSMENT';
+ if(vb)vb.textContent='BUILD 1.46.37-STAGE4-LAYOUT-NORMALISATION';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
+
+
+<style id="pw-stage4-layout-normalisation-14637">
+/* Build 1.46.37 — Stage 4 layout-only normalisation.
+   No sound definitions, questions, answers, scoring or assessment logic changed. */
+
+/* Keep each Stage 4 lesson card on a consistent vertical rhythm. */
+#sigLessonApp .sigLessonCard{
+  display:flex;
+  flex-direction:column;
+  min-height:650px;
+}
+#sigLessonApp .sigLessonActions{
+  margin-top:auto;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  align-items:stretch;
+  padding-top:18px;
+}
+#sigLessonApp .sigLessonActions > button:not(.big){
+  min-height:92px;
+  height:100%;
+  padding:14px 16px;
+  font-size:16px !important;
+  line-height:1.35 !important;
+  font-weight:800;
+  white-space:normal;
+  text-align:left;
+}
+#sigLessonApp .sigLessonActions > button.big{
+  grid-column:1/-1;
+  min-height:72px;
+  margin-top:4px;
+  font-size:17px !important;
+  line-height:1.2 !important;
+  font-weight:900;
+}
+
+/* Assessment navigation: reserve a stable action area so Next does not jump
+   according to feedback/explanation length. */
+#sigStage4Final .sigFinalBox{
+  display:flex;
+  flex-direction:column;
+  min-height:640px;
+}
+#sigStage4Final .sigFinalOpts{
+  margin-bottom:14px;
+}
+#sigStage4Final #sigFinalResult{
+  margin-top:auto;
+  min-height:160px;
+  display:flex;
+  align-items:flex-end;
+}
+#sigStage4Final .sigFinalResult{
+  width:100%;
+  min-height:140px;
+  box-sizing:border-box;
+  display:grid;
+  grid-template-columns:1fr auto;
+  grid-template-areas:
+    "status next"
+    "explain next";
+  gap:8px 18px;
+  align-items:center;
+  padding:16px 18px;
+}
+#sigStage4Final .sigFinalResult > b{grid-area:status;font-size:17px}
+#sigStage4Final .sigFinalResult > p{
+  grid-area:explain;
+  margin:0;
+  font-size:16px;
+  line-height:1.45;
+}
+#sigStage4Final .sigFinalResult > button{
+  grid-area:next;
+  min-width:190px;
+  min-height:58px;
+  font-size:16px;
+  font-weight:900;
+}
+
+/* iPad / narrower layouts: retain large touch targets without cramped text. */
+@media (max-width:900px){
+  #sigLessonApp .sigLessonCard{min-height:0}
+  #sigLessonApp .sigLessonActions{grid-template-columns:1fr}
+  #sigLessonApp .sigLessonActions > button.big{grid-column:1}
+  #sigLessonApp .sigLessonActions > button:not(.big){
+    min-height:76px;
+    font-size:16px !important;
+  }
+  #sigStage4Final .sigFinalBox{min-height:620px}
+  #sigStage4Final .sigFinalResult{
+    grid-template-columns:1fr;
+    grid-template-areas:"status" "explain" "next";
+  }
+  #sigStage4Final .sigFinalResult > button{width:100%}
+}
+</style>
 
 </body></html>
