@@ -24015,4 +24015,44 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  try{if(document.getElementById('tssTutorialPage')?.classList.contains('active'))ttRender()}catch(e){}
 })();
 </script>
+<style id="pw-tss-nine-plates-14628">
+/* 1.46.28 — unified clean TSS teaching graphics. Graphic only: no prose banners or duplicated lesson text. */
+#tssTutorialPage .ttDemo svg.pwTssUnified28{display:block;width:100%;height:auto;aspect-ratio:900/520;background:#f3ead5}
+</style>
+<script id="pw-tss-nine-plates-js-14628">
+(function(){
+ const $=id=>document.getElementById(id);
+ function defs(){return `<defs>
+  <marker id="u28r" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#a94f4d"/></marker>
+  <marker id="u28g" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#087d65"/></marker>
+  <marker id="u28b" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1777a5"/></marker>
+ </defs>`}
+ function css(){return `<style>
+  .u28lane{fill:#dce9ed;stroke:#5b7d8b;stroke-width:2}.u28sep{fill:#f2d2d2;stroke:#bd6262;stroke-width:2;stroke-dasharray:10 7}
+  .u28flow{stroke:#a94f4d;stroke-width:7;fill:none}.u28good{stroke:#087d65;stroke-width:8;fill:none}.u28blue{stroke:#1777a5;stroke-width:7;fill:none}
+  .u28bad{stroke:#c74843;stroke-width:6;fill:none;stroke-dasharray:10 8}.u28txt{font:800 17px system-ui,sans-serif;fill:#123d4d}.u28sub{font:700 14px system-ui,sans-serif;fill:#315361}
+  .u28green{font:800 15px system-ui,sans-serif;fill:#087d65}.u28red{font:800 15px system-ui,sans-serif;fill:#b13f3f}.u28ship{fill:#087d65;stroke:#173847;stroke-width:2}.u28other{fill:#6c8792;stroke:#173847;stroke-width:2}
+ </style>`}
+ function ship(x,y,deg=0,own=false){return `<g transform="translate(${x} ${y}) rotate(${deg})"><path d="M0 -21L11 10L6 19H-6L-11 10Z" class="${own?'u28ship':'u28other'}"/></g>`}
+ function base(){return `${defs()}${css()}<rect width="900" height="520" fill="#f3ead5"/><rect x="65" y="65" width="770" height="120" rx="4" class="u28lane"/><rect x="65" y="205" width="770" height="75" rx="4" class="u28sep"/><rect x="65" y="300" width="770" height="120" rx="4" class="u28lane"/><path d="M110 125H790" class="u28flow" marker-end="url(#u28r)"/><path d="M790 360H110" class="u28flow" marker-end="url(#u28r)"/><text x="90" y="95" class="u28txt">EASTBOUND TRAFFIC</text><text x="810" y="398" text-anchor="end" class="u28txt">WESTBOUND TRAFFIC</text><text x="450" y="250" text-anchor="middle" class="u28txt">SEPARATION ZONE</text>`}
+ function wrap(inner,label){return `<svg class="pwTssUnified28" viewBox="0 0 900 520" role="img" aria-label="${label}">${inner}</svg>`}
+ function plate(mode){
+  if(mode==='layout') return wrap(base()+ship(320,125,90)+ship(610,360,270)+`<g transform="translate(450 455)"><rect x="-250" y="-18" width="500" height="36" rx="18" fill="#fff9e9" stroke="#c9b99a"/><text x="0" y="6" text-anchor="middle" class="u28sub">LANES • FLOW • SEPARATION • ROUTE</text></g>`,'Rule 10 traffic separation scheme layout');
+  if(mode==='itz') return wrap(`${defs()}${css()}<rect width="900" height="520" fill="#f3ead5"/><rect x="65" y="35" width="770" height="48" fill="#d5bf88"/><text x="90" y="66" class="u28txt">COAST / INSHORE SIDE</text><rect x="65" y="95" width="770" height="92" rx="4" fill="#d9eee8" stroke="#579989" stroke-width="2" stroke-dasharray="9 6"/><text x="90" y="125" class="u28txt">INSHORE TRAFFIC ZONE (ITZ)</text><path d="M170 155H730" class="u28good" marker-end="url(#u28g)"/>${ship(180,155,90,true)}<rect x="65" y="205" width="770" height="95" class="u28lane"/><path d="M110 252H790" class="u28flow" marker-end="url(#u28r)"/><text x="90" y="232" class="u28txt">EASTBOUND TRAFFIC</text><rect x="65" y="318" width="770" height="65" class="u28sep"/><text x="450" y="358" text-anchor="middle" class="u28txt">SEPARATION ZONE</text><rect x="65" y="400" width="770" height="85" class="u28lane"/><path d="M790 443H110" class="u28flow" marker-end="url(#u28r)"/><text x="810" y="472" text-anchor="end" class="u28txt">WESTBOUND TRAFFIC</text>`,'Rule 10 inshore traffic zone');
+  if(mode==='impede') return wrap(base()+ship(500,125,90)+ship(450,470,0,true)+`<path d="M450 447V405" class="u28bad"/><text x="480" y="468" class="u28red">WAIT CLEAR</text><path d="M465 410 Q490 385 510 350" class="u28blue" marker-end="url(#u28b)"/>`,'Rule 10 safe gap before crossing');
+  if(mode==='cross') return wrap(base()+`<path d="M450 465V35" class="u28good" marker-end="url(#u28g)"/>${ship(450,445,0,true)}<path d="M450 360h46v-46" fill="none" stroke="#087d65" stroke-width="5"/><text x="510" y="338" class="u28green">90°</text>`,'Rule 10(c) crossing heading at right angles to traffic flow');
+  if(mode==='zone') return wrap(base()+ship(450,455,0,true)+`<path d="M450 432V310" class="u28good"/><circle cx="450" cy="242" r="30" fill="#c74843"/><path d="M433 225L467 259M467 225L433 259" stroke="white" stroke-width="6"/><text x="450" y="470" text-anchor="middle" class="u28sub">DO NOT PLAN TO WAIT IN THE SEPARATION ZONE</text>`,'Rule 10(e) separation zone');
+  if(mode==='follow') return wrap(base()+`<path d="M135 125H700" class="u28good" marker-end="url(#u28g)"/>${ship(410,125,90,true)}<text x="450" y="465" text-anchor="middle" class="u28green">USE THE LANE IN ITS GENERAL DIRECTION OF FLOW</text>`,'Rule 10 vessel using a traffic lane');
+  if(mode==='join') return wrap(base()+`<path d="M100 125H710" class="u28good" marker-end="url(#u28g)"/>${ship(220,125,90,true)}<path d="M255 185 Q335 145 430 125" class="u28blue" marker-end="url(#u28b)"/>${ship(270,178,55,true)}<text x="310" y="205" class="u28sub">SMALL ANGLE</text><path d="M760 360H690" class="u28flow"/><text x="450" y="465" text-anchor="middle" class="u28sub">JOIN / LEAVE AT A TERMINATION • FROM THE SIDE: SMALL ANGLE</text>`,'Rule 10 joining and leaving a traffic lane');
+  if(mode==='final') return wrap(base()+`<path d="M450 465V35" class="u28good" marker-end="url(#u28g)"/>${ship(450,445,0,true)}${ship(300,125,90)}${ship(620,360,270)}<path d="M450 360h46v-46" fill="none" stroke="#087d65" stroke-width="5"/><text x="510" y="338" class="u28green">90°</text>`,'Rule 10 complete vessel watch');
+  return wrap(base(),'Rule 10 traffic separation scheme');
+ }
+ window.ttDraw=function(mode,p){const d=$('ttDemo');if(d)d.innerHTML=plate(mode)};
+ window.PROJECT_WATCH_BUILD='1.46.28-TSS-UNIFIED-PLATES';
+ const vb=$('pwVisibleBuild'); if(vb)vb.textContent='BUILD 1.46.28-TSS-UNIFIED-PLATES';
+ document.title='Project Watch 1.46.28 • TSS Unified Plates';
+ try{if($('tssTutorialPage')?.classList.contains('active'))ttRender()}catch(e){}
+})();
+</script>
+
 </body></html>
