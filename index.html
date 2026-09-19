@@ -24055,4 +24055,54 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
 })();
 </script>
 
+
+<style id="pw-tss-authoritative-14629">
+/* 1.46.29 — authoritative Stage 7 teaching-plate renderer. */
+#tssTutorialPage #ttDemo{height:auto!important;min-height:0!important;background:#f3ead5!important;overflow:hidden}
+#tssTutorialPage #ttDemo svg.pwTss29{display:block!important;width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:900/520;background:#f3ead5}
+</style>
+<script id="pw-tss-authoritative-js-14629">
+(function(){
+ const $=id=>document.getElementById(id);
+ const defs=`<defs>
+  <marker id="p29r" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#a94f4d"/></marker>
+  <marker id="p29g" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#087d65"/></marker>
+  <marker id="p29b" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1777a5"/></marker>
+ </defs>`;
+ const css=`<style>
+ .p29lane{fill:#dce9ed;stroke:#5b7d8b;stroke-width:2}.p29sep{fill:#f2d2d2;stroke:#bd6262;stroke-width:2;stroke-dasharray:10 7}.p29itz{fill:#dcefe8;stroke:#5c9b8b;stroke-width:2;stroke-dasharray:9 6}.p29coast{fill:#d8c49a;stroke:#9b865c;stroke-width:2}
+ .p29flow{stroke:#a94f4d;stroke-width:7;fill:none}.p29good{stroke:#087d65;stroke-width:8;fill:none}.p29blue{stroke:#1777a5;stroke-width:6;fill:none}.p29bad{stroke:#c74843;stroke-width:6;fill:none;stroke-dasharray:10 8}
+ .p29txt{font:800 18px system-ui,sans-serif;fill:#123d4d}.p29sub{font:700 15px system-ui,sans-serif;fill:#315361}.p29green{font:800 16px system-ui,sans-serif;fill:#087d65}.p29red{font:800 16px system-ui,sans-serif;fill:#b13f3f}.p29blueTxt{font:800 16px system-ui,sans-serif;fill:#1777a5}.p29ship{fill:#087d65;stroke:#173847;stroke-width:2}.p29other{fill:#6c8792;stroke:#173847;stroke-width:2}
+ </style>`;
+ function ship(x,y,deg=0,own=false){return `<g transform="translate(${x} ${y}) rotate(${deg})"><path d="M0 -22L12 10L7 20H-7L-12 10Z" class="${own?'p29ship':'p29other'}"/></g>`}
+ function frame(inner,label){return `<svg class="pwTss29" viewBox="0 0 900 520" role="img" aria-label="${label}">${defs}${css}<rect width="900" height="520" fill="#f3ead5"/>${inner}</svg>`}
+ function scheme(extra=''){return `<rect x="65" y="65" width="770" height="120" rx="4" class="p29lane"/><rect x="65" y="205" width="770" height="75" rx="4" class="p29sep"/><rect x="65" y="300" width="770" height="120" rx="4" class="p29lane"/><path d="M110 125H790" class="p29flow" marker-end="url(#p29r)"/><path d="M790 360H110" class="p29flow" marker-end="url(#p29r)"/><text x="90" y="95" class="p29txt">EASTBOUND TRAFFIC</text><text x="810" y="398" text-anchor="end" class="p29txt">WESTBOUND TRAFFIC</text><text x="450" y="250" text-anchor="middle" class="p29txt">SEPARATION ZONE</text>${extra}`}
+ function plate(i){
+  if(i===0)return frame(scheme(`${ship(285,125,90)}${ship(625,360,270)}${ship(450,468,0,true)}<text x="450" y="492" text-anchor="middle" class="p29green">YOUR VESSEL • KNOW YOUR STATUS</text>`),'Rule 10 traffic separation scheme and vessel status');
+  if(i===1)return frame(`<rect x="65" y="35" width="770" height="50" rx="4" class="p29coast"/><text x="90" y="67" class="p29txt">COAST / INSHORE SIDE</text><rect x="65" y="100" width="770" height="75" rx="4" class="p29itz"/><text x="90" y="130" class="p29txt">INSHORE TRAFFIC ZONE (ITZ)</text><rect x="65" y="195" width="770" height="90" class="p29lane"/><path d="M110 240H790" class="p29flow" marker-end="url(#p29r)"/><text x="90" y="220" class="p29txt">EASTBOUND TRAFFIC</text><rect x="65" y="300" width="770" height="55" class="p29sep"/><text x="450" y="334" text-anchor="middle" class="p29txt">SEPARATION ZONE</text><rect x="65" y="370" width="770" height="90" class="p29lane"/><path d="M790 415H110" class="p29flow" marker-end="url(#p29r)"/><text x="810" y="445" text-anchor="end" class="p29txt">WESTBOUND TRAFFIC</text>`,'Rule 10 traffic separation scheme layout including inshore traffic zone');
+  if(i===2)return frame(`<rect x="65" y="35" width="770" height="50" rx="4" class="p29coast"/><text x="90" y="67" class="p29txt">COAST / INSHORE SIDE</text><rect x="65" y="100" width="770" height="95" rx="4" class="p29itz"/><text x="90" y="130" class="p29txt">INSHORE TRAFFIC ZONE (ITZ)</text><path d="M160 160H735" class="p29good" marker-end="url(#p29g)"/>${ship(210,160,90,true)}<text x="450" y="185" text-anchor="middle" class="p29green">SMALL VESSEL PROCEEDING ALONG THE ITZ</text><rect x="65" y="215" width="770" height="95" class="p29lane"/><path d="M110 262H790" class="p29flow" marker-end="url(#p29r)"/><text x="90" y="242" class="p29txt">TRAFFIC LANE</text><rect x="65" y="330" width="770" height="65" class="p29sep"/><text x="450" y="370" text-anchor="middle" class="p29txt">SEPARATION ZONE</text>`,'Rule 10(d) inshore traffic zone');
+  if(i===3)return frame(scheme(`${ship(510,125,90)}${ship(450,468,0,true)}<path d="M450 445V405" class="p29bad"/><path d="M433 420L467 454M467 420L433 454" stroke="#c74843" stroke-width="5"/><text x="510" y="468" class="p29red">WAIT FOR A SAFE GAP</text>`),'Rule 10(j) do not impede lane traffic');
+  if(i===4)return frame(scheme(`<path d="M450 465V35" class="p29good" marker-end="url(#p29g)"/>${ship(450,445,0,true)}<path d="M450 360h46v-46" fill="none" stroke="#087d65" stroke-width="5"/><text x="510" y="338" class="p29green">90° HEADING</text>`),'Rule 10(c) crossing heading at right angles to traffic flow');
+  if(i===5)return frame(scheme(`${ship(450,465,0,true)}<path d="M450 442V310" class="p29good"/><circle cx="450" cy="242" r="31" fill="#c74843"/><path d="M432 224L468 260M468 224L432 260" stroke="#fff" stroke-width="6"/><text x="500" y="248" class="p29red">DO NOT WAIT HERE</text>`),'Rule 10(e) separation zone is not waiting space');
+  if(i===6)return frame(scheme(`<path d="M145 125H735" class="p29good" marker-end="url(#p29g)"/>${ship(350,125,90,true)}<text x="450" y="165" text-anchor="middle" class="p29green">USE THE APPROPRIATE LANE • FOLLOW ITS GENERAL DIRECTION</text>`),'Rule 10(b) vessel using a traffic lane');
+  if(i===7)return frame(scheme(`<path d="M145 125H735" class="p29good" marker-end="url(#p29g)"/>${ship(370,125,90,true)}<path d="M210 190Q285 145 365 125" class="p29blue" marker-end="url(#p29b)"/>${ship(230,180,55,true)}<text x="165" y="220" class="p29blueTxt">JOIN / LEAVE AT A SMALL ANGLE</text>`),'Rule 10 joining and leaving a traffic lane');
+  return frame(scheme(`<path d="M450 465V35" class="p29good" marker-end="url(#p29g)"/>${ship(450,445,0,true)}${ship(285,125,90)}${ship(625,360,270)}<path d="M450 360h46v-46" fill="none" stroke="#087d65" stroke-width="5"/><text x="510" y="338" class="p29green">90°</text>`),'Rule 10 complete small-vessel watch');
+ }
+ function currentIndex(){
+   if(typeof ttI==='number')return Math.max(0,Math.min(8,ttI));
+   const n=parseInt(($('ttIndex')?.textContent||'1'),10);return Number.isFinite(n)?Math.max(0,Math.min(8,n-1)):0;
+ }
+ function renderPlate(){const d=$('ttDemo');if(!d)return;const i=currentIndex();d.innerHTML=plate(i);d.dataset.teachingLesson=String(i+1);const m=$('ttMode');if(m)m.textContent=`TEACHING PLATE ${i+1} / 9`;}
+ const baseRender=window.ttRender;
+ window.ttRender=function(){baseRender.apply(this,arguments);renderPlate();};
+ window.ttRunDemo=function(){renderPlate();};
+ window.ttDraw=function(){renderPlate();};
+ window.PW_TSS_TEACHING_PLATE_RENDERER={version:'1.46.29',render:renderPlate,plate:plate};
+ window.PROJECT_WATCH_BUILD='1.46.29-TSS-TEACHING-RENDERER';
+ const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.29-TSS-TEACHING-RENDERER';
+ document.title='Project Watch 1.46.29 • TSS Teaching Renderer';
+ try{if($('tssTutorialPage')?.classList.contains('active'))renderPlate()}catch(e){console.error(e)}
+})();
+</script>
+
 </body></html>
