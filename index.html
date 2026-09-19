@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#031923">
-<title>Project Watch 1.46.24 • TSS Visual QA</title>
+<title>Project Watch 1.46.25 • TSS Teaching Plates</title>
 <style>
 :root{
   --bg:#02141d;--panel:#07364e;--panel2:#052a3c;--blue:#168bcf;
@@ -16272,7 +16272,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 }
 </style>
 
-<!-- PROJECT WATCH RELEASE: 1.46.24-TSS-VISUAL-QA | BASE: 1.46.22-COLLISION-CORE -->
+<!-- PROJECT WATCH RELEASE: 1.46.25-TSS-TEACHING-PLATES | BASE: 1.46.22-COLLISION-CORE -->
 
 <style id="pw14624css">
 /* 1.46.24 TSS visual QA: readability + clean assessment hierarchy */
@@ -16372,7 +16372,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 </div>
 <div class="app">
 <header>
-  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.24-TSS-VISUAL-QA</div></div>
+  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.25-TSS-TEACHING-PLATES</div></div>
   <div class="headerRight">
     <button class="vesselProfileOpen" onclick="openVesselSetup(false)">⚓ MY VESSEL</button>
     <div id="hdrMode">WATCH ONE</div>
@@ -23338,7 +23338,7 @@ body.pw-collision-watch-active #pwLiveVesselIdentity{display:block}
    Vessel operating state is chosen on the briefing screen and locked for the live watch.
    No course-progress/completion/storage writes are introduced here. */
 (function(){
- const BUILD='1.46.24-TSS-VISUAL-QA';
+ const BUILD='1.46.25-TSS-TEACHING-PLATES';
 
  function visible(id){
    const e=document.getElementById(id);
@@ -23677,17 +23677,17 @@ h3,h4,h5,h6,.cardTitle,.moduleTitle,.scenarioTitle{
 
 
 <style>.scenarioPhoto,.scenarioGeometry,.scenarioPhotoShade,.scenarioAspectChip,.scenarioVisualTag{display:none!important}</style>
-<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.24-TSS-VISUAL-QA';</script>
-<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.24-TSS-VISUAL-QA';</script>
+<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';</script>
+<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';</script>
 
 <script id="pw14624js">
 /* Build 1.46.24 — TSS Visual QA + brand abstraction groundwork */
 window.PW_BRAND=Object.freeze({productName:'Project Watch',shortName:'Project Watch',tagline:'Maritime watchkeeping training',creatorBrand:"Taylor’s on the Tide",copyrightOwner:'Clifton Taylor',copyrightYear:'2026'});
-window.PROJECT_WATCH_BUILD='1.46.24-TSS-VISUAL-QA';
+window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';
 
 function pwBrandApply(){
   const b=window.PW_BRAND;
-  document.title=`${b.productName} 1.46.24 • TSS Visual QA`;
+  document.title=`${b.productName} 1.46.25 • TSS Teaching Plates`;
   document.querySelectorAll('.brand').forEach(x=>{if((x.textContent||'').trim().toUpperCase().includes('PROJECT WATCH'))x.textContent=b.productName.toUpperCase()});
   document.querySelectorAll('.ver').forEach(x=>{if((x.textContent||'').includes('1.46.23'))x.textContent=(x.textContent||'').replace('1.46.23','1.46.24')});
 }
@@ -23825,4 +23825,84 @@ function pwTssBackToMenu(){try{ttStopDemo()}catch(e){};showModule('tss');window.
 
 window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{adaptTSSExamForProfile();adaptTSSTutorialForProfile()}catch(e){};setTimeout(()=>{if(document.getElementById('tssTutorialPage')?.classList.contains('active'))ttRender()},50)});
 </script>
+
+<style id="pw14625TeachingPlatePolish">
+/* 1.46.25 — Stage 7 beginner-course readability and layout pass */
+#tssTutorialPage .ttMain{min-width:0}
+#tssTutorialPage .ttDemo{min-height:0!important;height:auto!important;padding:0!important;background:#f3ead5!important;overflow:hidden!important}
+#tssTutorialPage .ttDemo svg.pwTssPlate{display:block!important;width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:900/520;background:#f3ead5}
+#tssTutorialPage .ttFacts{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+#tssTutorialPage .ttFacts>div{min-height:118px!important;padding:16px 18px!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important}
+#tssTutorialPage .ttFacts small{font-size:13px!important;line-height:1.25!important;letter-spacing:.07em!important;margin-bottom:7px!important}
+#tssTutorialPage .ttFacts b{font-size:16px!important;line-height:1.5!important;margin-top:0!important;font-weight:700!important}
+#tssTutorialPage .tutTssProgress,#tssTutorialPage #ttIndex{font-size:15px!important}
+#tssTutorialPage .ttQuestion{padding:15px 17px!important}
+#tssTutorialPage .ttQuestion h4{font-size:13px!important;line-height:1.35!important;margin:0 0 7px!important}
+#tssTutorialPage .ttQuestion p{font-size:15px!important;line-height:1.55!important;margin:0!important}
+#tssTutorialPage .ttCoach p{font-size:16px!important;line-height:1.6!important}
+#tssTutorialPage .pwTssPlate .label{font-size:18px!important;paint-order:stroke;stroke:#f3ead5;stroke-width:5px;stroke-linejoin:round}
+#tssTutorialPage .pwTssPlate .sub{font-size:15px!important;paint-order:stroke;stroke:#f3ead5;stroke-width:4px;stroke-linejoin:round}
+#tssTutorialPage .pwTssPlate .tiny{font-size:13px!important;paint-order:stroke;stroke:#f3ead5;stroke-width:4px;stroke-linejoin:round}
+#tssTutorialPage .pwTssPlate .flow{stroke-width:4!important}
+#tssTutorialPage .pwTssPlate .routeInfo,#tssTutorialPage .pwTssPlate .routeGood,#tssTutorialPage .pwTssPlate .routeBad{stroke-width:5!important}
+#stage7FinalPage .s7Visual svg{width:100%;height:auto;display:block}
+#stage7FinalPage .s7Visual .label,#stage7FinalPage .s7Visual .sub,#stage7FinalPage .s7Visual .tiny{paint-order:stroke;stroke:#f3ead5;stroke-width:4px;stroke-linejoin:round}
+@media(max-width:700px){
+ #tssTutorialPage .ttFacts{grid-template-columns:1fr!important}
+ #tssTutorialPage .ttFacts>div{min-height:0!important;padding:14px 15px!important}
+ #tssTutorialPage .ttFacts small{font-size:12px!important}
+ #tssTutorialPage .ttFacts b{font-size:15px!important}
+ #tssTutorialPage .ttCoach p,#tssTutorialPage .ttQuestion p{font-size:15px!important}
+ #tssTutorialPage .pwTssPlate .label{font-size:17px!important}
+ #tssTutorialPage .pwTssPlate .sub{font-size:14px!important}
+ #tssTutorialPage .pwTssPlate .tiny{font-size:12px!important}
+}
+</style>
+<script id="pw14625js">
+(function(){
+ 'use strict';
+ window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';
+ // Keep the selector as three immutable profile identities. Personalisation must never rename these controls.
+ function lockProfileSelector(){
+   const labels={pwWatch1Btn:'WATCH ONE',pwWatch2Btn:'WATCH TWO',pwCustomBtn:'MY VESSEL'};
+   Object.entries(labels).forEach(([id,label])=>{const b=document.getElementById(id);if(b&&b.textContent!==label){b.textContent=label;b.dataset.noPersonalise='true'}});
+ }
+ let selectorGuard=null;
+ function installSelectorGuard(){
+   lockProfileSelector();
+   const host=document.getElementById('pwVesselSwitch'); if(!host||selectorGuard)return;
+   selectorGuard=new MutationObserver(()=>lockProfileSelector());
+   selectorGuard.observe(host,{subtree:true,childList:true,characterData:true});
+ }
+ const oldRefresh=window.refreshVesselUI;
+ if(typeof oldRefresh==='function')window.refreshVesselUI=function(){const r=oldRefresh.apply(this,arguments);lockProfileSelector();return r};
+ const oldActivate=window.pwActivateProfile;
+ if(typeof oldActivate==='function')window.pwActivateProfile=function(id){const r=oldActivate(id);setTimeout(()=>{lockProfileSelector();try{adaptTSSTutorialForProfile()}catch(e){}},0);return r};
+ // Beginner course always re-renders the purpose-built plate after the lesson state changes.
+ function refreshTeachingPlate(){try{if(document.getElementById('tssTutorialPage')?.classList.contains('active')&&typeof ttRender==='function')ttRender()}catch(e){console.error(e)}}
+ const oldShowTut=window.showTSSTutorial;
+ if(typeof oldShowTut==='function')window.showTSSTutorial=function(){const r=oldShowTut.apply(this,arguments);setTimeout(()=>{refreshTeachingPlate();lockProfileSelector()},20);return r};
+ // Result screen: direct route back to the three-choice TSS landing screen.
+ function addStage7Return(){
+   const root=document.getElementById('stage7FinalRoot'); if(!root)return;
+   const score=root.querySelector('.s5FinalScore');
+   if(!score||root.querySelector('.pwBackTssMenu'))return;
+   const b=document.createElement('button');b.className='pwBackTssMenu';b.textContent='← BACK TO TSS TRAINING';
+   b.onclick=()=>{showModule('tss');window.scrollTo({top:0,behavior:'smooth'})};
+   root.querySelector('.s5FinalBox')?.appendChild(b);
+ }
+ const oldS7=window.renderStage7Final;
+ if(typeof oldS7==='function')window.renderStage7Final=function(){const r=oldS7.apply(this,arguments);addStage7Return();lockProfileSelector();return r};
+ // Also make the tutorial's own TSS button explicitly return one level, not the Library.
+ document.addEventListener('click',e=>{
+   const p=document.getElementById('tssTutorialPage');
+   if(!p?.classList.contains('active'))return;
+   const b=e.target.closest('.ttHead button');
+   if(b){e.preventDefault();e.stopImmediatePropagation();showModule('tss');window.scrollTo({top:0,behavior:'smooth'})}
+ },true);
+ window.addEventListener('load',()=>{installSelectorGuard();setTimeout(()=>{lockProfileSelector();refreshTeachingPlate()},80)});
+ setTimeout(installSelectorGuard,100);
+})();
+</script>
+
 </body></html>
