@@ -16372,7 +16372,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 </div>
 <div class="app">
 <header>
-  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.26-TSS-PLATE-REDESIGN</div></div>
+  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.27-TSS-90-PROTOTYPE</div></div>
   <div class="headerRight">
     <button class="vesselProfileOpen" onclick="openVesselSetup(false)">⚓ MY VESSEL</button>
     <div id="hdrMode">WATCH ONE</div>
@@ -23962,6 +23962,56 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
   return `<svg class="pwTssPlate26" viewBox="0 0 900 560" role="img" aria-label="Rule 10 traffic separation teaching diagram">${style()}${x}</svg>`;
  }
  window.ttDraw=function(mode,p){const d=document.getElementById('ttDemo');if(d)d.innerHTML=plate(mode,p)};
+ try{if(document.getElementById('tssTutorialPage')?.classList.contains('active'))ttRender()}catch(e){}
+})();
+</script>
+
+<style id="pw-tss-90-prototype-14627">
+/* 1.46.27 — single-plate prototype. Only the Rule 10(c) 90-degree teaching graphic changes. */
+#tssTutorialPage .ttDemo svg.pwTss90Prototype{display:block;width:100%;height:auto;aspect-ratio:900/560;background:#f3ead5}
+</style>
+<script id="pw-tss-90-prototype-js-14627">
+(function(){
+ const previous=window.ttDraw;
+ function plate90(){return `<svg class="pwTssPlate26 pwTss90Prototype" viewBox="0 0 900 560" role="img" aria-label="Rule 10(c) crossing heading at right angles to traffic flow">
+ <defs>
+  <marker id="p27red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#a94f4d"/></marker>
+  <marker id="p27green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#087d65"/></marker>
+ </defs>
+ <style>
+ .p27lane{fill:#dce9ed;stroke:#5b7d8b;stroke-width:2}.p27sep{fill:#f2d2d2;stroke:#bd6262;stroke-width:2;stroke-dasharray:10 7}.p27flow{stroke:#a94f4d;stroke-width:7;fill:none}.p27heading{stroke:#087d65;stroke-width:8;fill:none}.p27title{font:800 18px system-ui,sans-serif;fill:#123d4d}.p27zone{font:800 17px system-ui,sans-serif;fill:#123d4d}.p27key{font:800 16px system-ui,sans-serif;fill:#087d65}.p27small{font:700 14px system-ui,sans-serif;fill:#315361}.p27white{font:800 15px system-ui,sans-serif;fill:#fff}.p27ship{fill:#087d65;stroke:#173847;stroke-width:2}
+ </style>
+ <rect width="900" height="560" fill="#f3ead5"/>
+ <!-- Dedicated diagram area: no prose overlays -->
+ <rect x="70" y="105" width="760" height="105" rx="4" class="p27lane"/>
+ <rect x="70" y="230" width="760" height="70" rx="4" class="p27sep"/>
+ <rect x="70" y="320" width="760" height="105" rx="4" class="p27lane"/>
+ <path d="M115 158H785" class="p27flow" marker-end="url(#p27red)"/>
+ <path d="M785 373H115" class="p27flow" marker-end="url(#p27red)"/>
+ <text x="92" y="132" class="p27title">EASTBOUND TRAFFIC</text>
+ <text x="808" y="405" text-anchor="end" class="p27title">WESTBOUND TRAFFIC</text>
+ <text x="450" y="272" text-anchor="middle" class="p27zone">SEPARATION ZONE</text>
+ <!-- Own vessel and one unambiguous heading vector -->
+ <path d="M450 472V72" class="p27heading" marker-end="url(#p27green)"/>
+ <g transform="translate(450 451)"><path d="M0 -21L11 10L6 19H-6L-11 10Z" class="p27ship"/></g>
+ <!-- Right-angle symbol placed in clear water, not on a label -->
+ <path d="M450 373h42v-42" fill="none" stroke="#087d65" stroke-width="5"/>
+ <text x="505" y="350" class="p27key">90°</text>
+ <!-- Compact key band: fixed safe zones, no text on tracks/vessel -->
+ <rect x="105" y="462" width="690" height="58" rx="12" fill="#fff9e9" stroke="#c9b99a" stroke-width="1.5"/>
+ <g transform="translate(145 491)"><line x1="0" y1="0" x2="58" y2="0" stroke="#a94f4d" stroke-width="7"/><text x="72" y="5" class="p27small">TRAFFIC FLOW</text></g>
+ <g transform="translate(365 491)"><line x1="0" y1="18" x2="0" y2="-18" stroke="#087d65" stroke-width="7"/><text x="18" y="5" class="p27small">VESSEL HEADING</text></g>
+ <g transform="translate(610 491)"><path d="M0 12V-12H24" fill="none" stroke="#087d65" stroke-width="4"/><text x="38" y="5" class="p27small">RIGHT ANGLE</text></g>
+ <rect x="260" y="35" width="380" height="42" rx="10" fill="#08785f"/><text x="450" y="62" text-anchor="middle" class="p27white">RULE 10(c) • CROSSING HEADING ≈ RIGHT ANGLES TO FLOW</text>
+ </svg>`}
+ window.ttDraw=function(mode,p){
+   if(mode==='cross'){
+     const d=document.getElementById('ttDemo');
+     if(d)d.innerHTML=plate90();
+     return;
+   }
+   return previous.apply(this,arguments);
+ };
  try{if(document.getElementById('tssTutorialPage')?.classList.contains('active'))ttRender()}catch(e){}
 })();
 </script>
