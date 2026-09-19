@@ -16459,6 +16459,59 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 }
 </style>
 
+
+<style id="pw-14653-legacy-microtext-exceptions">
+/* BUILD 1.46.53 — LEGACY MICROTEXT EXCEPTIONS
+   Forensic pass based on the remaining iPad screenshots.
+   Only legacy/custom component descendants are remapped; normal body/headings stay untouched. */
+:root{
+  --pw-legacy-label:clamp(10px,.78vw,12px);
+  --pw-legacy-copy:clamp(11px,.90vw,14px);
+  --pw-legacy-strong:clamp(12px,.96vw,15px);
+}
+/* Home course rail + capability tiles */
+.homeRailStage span,.homeRailStage small,.homeRailStage b,
+.homeCapabilityBar b,.homeCapabilityBar small{
+  font-size:var(--pw-legacy-copy)!important;line-height:1.35!important;
+}
+.homeRailStage b,.homeCapabilityBar b{font-size:var(--pw-legacy-strong)!important}
+.homeRailStage{min-height:96px!important}
+/* Course standards + quality principles: both label AND bold value were legacy-sized */
+.courseStandards small,.courseStandards b,
+.qualityGrid span,.qualityGrid b,.qualityGrid small{
+  font-size:var(--pw-legacy-copy)!important;line-height:1.4!important;
+}
+.qualityGrid b{font-size:var(--pw-legacy-strong)!important}
+/* Assessment basis and empty-state helper copy */
+.examBasis small,.examBasis b,.examEmpty span{
+  font-size:var(--pw-legacy-copy)!important;line-height:1.4!important;
+}
+.examBasis b{font-size:var(--pw-legacy-strong)!important}
+/* AIS actual class names missed by the previous generic remap */
+.aisSafetyBar b,.aisSafetyBar span,
+.aisTargetEmpty b,.aisTargetEmpty span,
+.aisLegend .ver,.aisLegend div:not(.ver),.aisLegend div:not(.ver) span,
+.aisChartBottom small,.aisChartBottom b{
+  font-size:var(--pw-legacy-copy)!important;line-height:1.4!important;
+}
+.aisSafetyBar b,.aisTargetEmpty b{font-size:var(--pw-legacy-strong)!important}
+/* Collision: remaining generated/custom families */
+.scenarioConditions small,.scenarioConditions b,
+.scenarioHeroStrap,.csModeHelp b,.csModeHelp small,
+.scenarioBtn .scenarioCopy b,.scenarioBtn .scenarioCopy span,.scenarioBtn small,
+.csBriefGrid small,.csBriefGrid b,.csHandoverGrid small,.csHandoverGrid b,
+.scenarioLaunchBar .ver,.scenarioLaunchBar b{
+  font-size:var(--pw-legacy-copy)!important;line-height:1.35!important;
+}
+.scenarioConditions b,.scenarioBtn .scenarioCopy b,.scenarioLaunchBar b{font-size:var(--pw-legacy-strong)!important}
+@media(max-width:900px){
+ :root{--pw-legacy-label:11px;--pw-legacy-copy:12px;--pw-legacy-strong:13px}
+ .homeRailStage{min-height:92px!important}
+}
+@media(max-width:650px){
+ :root{--pw-legacy-label:11px;--pw-legacy-copy:12.5px;--pw-legacy-strong:13.5px}
+}
+</style>
 </head>
 <body>
 <div id="vesselSetupModal" class="vesselSetupModal" aria-hidden="true">
@@ -24943,7 +24996,7 @@ small,.small,.mini,.muted,.hint,.sub,.eyebrow,.kicker,.build,.ver,
 }
 </style>
 <script id="pw-unified-typography-marker-14650">
-(function(){window.PW_TYPOGRAPHY_ARCHITECTURE={version:'1.46.51',reference:'Lights & Shapes / Voyage',responsive:true};window.PROJECT_WATCH_BUILD='1.46.52-MICROTEXT-COMPONENT-REMAP';const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.52-MICROTEXT-COMPONENT-REMAP';})();
+(function(){window.PW_TYPOGRAPHY_ARCHITECTURE={version:'1.46.51',reference:'Lights & Shapes / Voyage',responsive:true};window.PROJECT_WATCH_BUILD='1.46.53-LEGACY-MICROTEXT-EXCEPTIONS';const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.53-LEGACY-MICROTEXT-EXCEPTIONS';})();
 </script>
 \n<style id="pw-typography-coverage-audit-14651">
 /* 1.46.51 — typography coverage audit. Visual/logic content untouched.
@@ -25004,5 +25057,5 @@ small,.small,.mini,.muted,.hint,.sub,.eyebrow,.kicker,.build,.ver,
 /* Deliberate exclusions: SVG/canvas/chart labels, approved embedded artwork and diagram annotations. */
 </style>
 <script id="pw-typography-coverage-marker-14651">
-(function(){window.PW_TYPOGRAPHY_COVERAGE_AUDIT={version:'1.46.51',reference:'Lights & Shapes / Voyage',scope:'HTML learner-facing text'};window.PROJECT_WATCH_BUILD='1.46.52-MICROTEXT-COMPONENT-REMAP';const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.52-MICROTEXT-COMPONENT-REMAP';})();
+(function(){window.PW_TYPOGRAPHY_COVERAGE_AUDIT={version:'1.46.51',reference:'Lights & Shapes / Voyage',scope:'HTML learner-facing text'};window.PROJECT_WATCH_BUILD='1.46.53-LEGACY-MICROTEXT-EXCEPTIONS';const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.53-LEGACY-MICROTEXT-EXCEPTIONS';})();
 </script>\n</body></html>
