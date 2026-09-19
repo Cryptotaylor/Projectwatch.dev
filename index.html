@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#031923">
-<title>Project Watch 1.46.23 • QA Revision</title>
+<title>Project Watch 1.46.24 • TSS Visual QA</title>
 <style>
 :root{
   --bg:#02141d;--panel:#07364e;--panel2:#052a3c;--blue:#168bcf;
@@ -16272,7 +16272,31 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 }
 </style>
 
-<!-- PROJECT WATCH RELEASE: 1.46.23-QA-REVISION | BASE: 1.46.22-COLLISION-CORE -->
+<!-- PROJECT WATCH RELEASE: 1.46.24-TSS-VISUAL-QA | BASE: 1.46.22-COLLISION-CORE -->
+
+<style id="pw14624css">
+/* 1.46.24 TSS visual QA: readability + clean assessment hierarchy */
+:root{--pw-card-copy:13px;--pw-card-leading:1.48}
+.ttFacts>div b,.crFact span,.s5Fact p,.sigFact p,.orientationTeachGrid span,
+.tssCard p,.procedureStep small,.distressCard small{font-size:var(--pw-card-copy)!important;line-height:var(--pw-card-leading)!important}
+#tssTutorialPage .ttFacts>div{min-height:92px;padding:13px 14px!important}
+#tssTutorialPage .ttFacts small{font-size:10px!important;letter-spacing:.08em}
+#tssTutorialPage .ttFacts b{display:block;margin-top:5px;color:#e7f4f8}
+#tssTutorialPage .tutTssProgress,#tssTutorialPage #ttIndex{font-size:12px!important}
+#tssTutorialPage #ttQuestion h4{font-size:13px!important}
+#tssTutorialPage #ttQuestion p{font-size:12px!important}
+.pwTssPlate{width:100%;height:auto;display:block;background:#f4ecd9}
+.pwTssPlate .sea{fill:#b8d6df}.pwTssPlate .lane{fill:#a9ceda}.pwTssPlate .sep{fill:#f0df9b}.pwTssPlate .itz{fill:#e6d18a}
+.pwTssPlate .flow{stroke:#9b4141;stroke-width:6;fill:none}.pwTssPlate .route{stroke:#08765d;stroke-width:7;fill:none}.pwTssPlate .routeInfo{stroke:#167f9e;stroke-width:5;fill:none;stroke-dasharray:10 8}.pwTssPlate .routeBad{stroke:#b54848;stroke-width:6;fill:none;stroke-dasharray:12 8}
+.pwTssPlate text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#173744}.pwTssPlate .label{font-size:18px;font-weight:900}.pwTssPlate .sub{font-size:14px;font-weight:750}.pwTssPlate .tiny{font-size:12px;font-weight:750}.pwTssPlate .good{fill:#086c55}.pwTssPlate .warn{fill:#a43636}.pwTssPlate .ship{fill:#7b8990;stroke:#42545c;stroke-width:2}.pwTssPlate .own{fill:#a13232;stroke:#5c1717;stroke-width:2}.pwTssPlate .wind{fill:#0c708f}
+.txRulePrompt.pwProfilePrompt{font-size:12px!important;line-height:1.45;background:#082f42;border-left:4px solid #6ee0ff;padding:9px 11px;border-radius:8px}
+.pwExamGraphicCaption{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;background:#082b3d;color:#cceaf4;font-size:10px;font-weight:800;letter-spacing:.04em}
+.pwExamGraphicCaption b{color:#fff}.pwReviewCue{color:#8ff0b5}
+#pwVesselSwitch button{white-space:nowrap}
+#pwVesselSwitch button.active{background:#168bcf!important;border-color:#7de8ff!important;color:#fff!important}
+.pwTssQuickProgress{margin:8px 0;color:#8fe8ff;font-size:11px;font-weight:900;letter-spacing:.05em}
+@media(max-width:650px){:root{--pw-card-copy:12.5px}.pwTssPlate .label{font-size:17px}.pwTssPlate .sub{font-size:13px}.pwTssPlate .tiny{font-size:11px}#tssTutorialPage .ttFacts>div{min-height:82px}}
+</style>
 </head>
 <body>
 <div id="vesselSetupModal" class="vesselSetupModal" aria-hidden="true">
@@ -16348,7 +16372,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 </div>
 <div class="app">
 <header>
-  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.23-QA-REVISION</div></div>
+  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.24-TSS-VISUAL-QA</div></div>
   <div class="headerRight">
     <button class="vesselProfileOpen" onclick="openVesselSetup(false)">⚓ MY VESSEL</button>
     <div id="hdrMode">WATCH ONE</div>
@@ -23314,7 +23338,7 @@ body.pw-collision-watch-active #pwLiveVesselIdentity{display:block}
    Vessel operating state is chosen on the briefing screen and locked for the live watch.
    No course-progress/completion/storage writes are introduced here. */
 (function(){
- const BUILD='1.46.23-QA-REVISION';
+ const BUILD='1.46.24-TSS-VISUAL-QA';
 
  function visible(id){
    const e=document.getElementById(id);
@@ -23653,6 +23677,152 @@ h3,h4,h5,h6,.cardTitle,.moduleTitle,.scenarioTitle{
 
 
 <style>.scenarioPhoto,.scenarioGeometry,.scenarioPhotoShade,.scenarioAspectChip,.scenarioVisualTag{display:none!important}</style>
-<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.23-QA-REVISION';</script>
-<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.23-QA-REVISION';</script>
+<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.24-TSS-VISUAL-QA';</script>
+<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.24-TSS-VISUAL-QA';</script>
+
+<script id="pw14624js">
+/* Build 1.46.24 — TSS Visual QA + brand abstraction groundwork */
+window.PW_BRAND=Object.freeze({productName:'Project Watch',shortName:'Project Watch',tagline:'Maritime watchkeeping training',creatorBrand:"Taylor’s on the Tide",copyrightOwner:'Clifton Taylor',copyrightYear:'2026'});
+window.PROJECT_WATCH_BUILD='1.46.24-TSS-VISUAL-QA';
+
+function pwBrandApply(){
+  const b=window.PW_BRAND;
+  document.title=`${b.productName} 1.46.24 • TSS Visual QA`;
+  document.querySelectorAll('.brand').forEach(x=>{if((x.textContent||'').trim().toUpperCase().includes('PROJECT WATCH'))x.textContent=b.productName.toUpperCase()});
+  document.querySelectorAll('.ver').forEach(x=>{if((x.textContent||'').includes('1.46.23'))x.textContent=(x.textContent||'').replace('1.46.23','1.46.24')});
+}
+function pwProfileStatus(){
+  const nm=typeof vesselName==='function'?vesselName():'Training vessel';
+  const len=typeof vesselDisplayLength==='function'?vesselDisplayLength():'';
+  const type=typeof vesselTypeText==='function'?vesselTypeText():'';
+  let op='';
+  try{if(typeof vesselPhysicalType==='function'&&vesselPhysicalType()==='sail')op=(typeof vesselOperationalState==='function'&&vesselOperationalState()==='sail')?'UNDER SAIL':'USING ENGINE • POWER-DRIVEN';else op='POWER-DRIVEN'}catch(e){op=String(type).toUpperCase()}
+  return {nm,len,type,op};
+}
+function pwFixVesselSwitcher(){
+  const p=typeof vesselProfile==='function'?vesselProfile():null;
+  const map=[['pwWatch1Btn','WATCH ONE','watch1'],['pwWatch2Btn','WATCH TWO','watch2'],['pwCustomBtn','MY VESSEL','custom']];
+  map.forEach(([id,label,key])=>{const b=document.getElementById(id);if(b){b.textContent=label;b.dataset.noPersonalise='true';b.classList.toggle('active',p?.id===key)}});
+  const ob=document.getElementById('pwOpBtn');if(ob){const st=pwProfileStatus();ob.textContent=st.op;ob.dataset.noPersonalise='true'}
+}
+
+function pwTssDefs(){return `<defs><marker id="pwa" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9b4141"/></marker><marker id="pwg" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#08765d"/></marker><marker id="pwb" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#167f9e"/></marker></defs>`}
+function pwShip(x,y,h,own=false,label=''){
+ return `<g transform="translate(${x} ${y}) rotate(${h})"><path class="${own?'own':'ship'}" d="M0,-20 L11,12 L0,22 L-11,12 Z"/></g>${label?`<text x="${x+18}" y="${y-8}" class="tiny">${label}</text>`:''}`;
+}
+function pwBaseTSS(extra='',bottom=''){
+ return `<svg class="pwTssPlate" viewBox="0 0 900 520" role="img" aria-label="Traffic separation scheme training diagram">${pwTssDefs()}<rect class="sea" width="900" height="520"/><rect class="lane" x="70" y="95" width="760" height="115" rx="4"/><rect class="sep" x="70" y="225" width="760" height="70" rx="4"/><rect class="lane" x="70" y="310" width="760" height="115" rx="4"/><text x="90" y="122" class="label">EASTBOUND TRAFFIC LANE</text><path class="flow" d="M115 165 H760" marker-end="url(#pwa)"/><text x="90" y="267" class="label">SEPARATION ZONE</text><text x="90" y="338" class="label">WESTBOUND TRAFFIC LANE</text><path class="flow" d="M785 382 H140" marker-end="url(#pwa)"/>${extra}${bottom?`<rect x="70" y="452" width="760" height="46" rx="10" fill="#fff" opacity=".82"/><text x="90" y="481" class="sub">${bottom}</text>`:''}</svg>`;
+}
+function pwTssPlate(mode){
+ const st=pwProfileStatus(), own=st.nm.toUpperCase();
+ if(mode==='layout')return pwBaseTSS(pwShip(340,165,90,false,'LANE VESSEL')+pwShip(610,382,270,false,'LANE VESSEL'),'READ THE LANE ARROWS • IDENTIFY THE SEPARATION ZONE • KEEP THE OTHER COLREGS IN FORCE');
+ if(mode==='itz')return `<svg class="pwTssPlate" viewBox="0 0 900 520">${pwTssDefs()}<rect class="sea" width="900" height="520"/><rect class="itz" x="70" y="55" width="760" height="95"/><text x="90" y="88" class="label">INSHORE TRAFFIC ZONE (ITZ)</text><text x="90" y="116" class="sub">Traffic may be encountered in either direction</text><rect class="lane" x="70" y="180" width="760" height="120"/><path class="flow" d="M115 240 H760" marker-end="url(#pwa)"/><text x="90" y="208" class="label">ADJACENT TRAFFIC LANE</text><rect class="sep" x="70" y="320" width="760" height="65"/><text x="90" y="360" class="label">SEPARATION ZONE</text>${pwShip(260,112,90,true,own)}${pwShip(520,240,90,false,'LANE VESSEL')}<rect x="70" y="420" width="760" height="62" rx="10" fill="#fff" opacity=".82"/><text x="90" y="447" class="sub">Rule 10(d): eligibility to use an ITZ does not make it empty or one-way.</text><text x="90" y="470" class="tiny">Maintain lookout and check the chart, Sailing Directions and local provisions.</text></svg>`;
+ if(mode==='impede')return pwBaseTSS(`${pwShip(405,470,0,true,own)}${pwShip(260,165,90,false,'LANE VESSEL')}<path class="routeInfo" d="M405 445 V300" marker-end="url(#pwb)"/><text x="430" y="432" class="sub">PLANNED CROSSING</text><text x="430" y="456" class="tiny">Assess the traffic before committing</text>`,'DO NOT FORCE A CROSSING THAT WOULD IMPEDE THE SAFE PASSAGE OF LANE-FOLLOWING POWER-DRIVEN TRAFFIC');
+ if(mode==='cross')return pwBaseTSS(`${pwShip(450,468,0,true,own)}<path class="route" d="M450 445 V62" marker-end="url(#pwg)"/><path d="M450 325 h34 v-34" fill="none" stroke="#08765d" stroke-width="4"/><text x="495" y="316" class="label good">HEADING ≈ 90° TO FLOW</text><path class="routeBad" d="M260 445 L405 305"/><path class="routeBad" d="M640 445 L495 305"/><text x="185" y="470" class="tiny warn">SHALLOW HEADING</text><text x="605" y="470" class="tiny warn">SHALLOW HEADING</text>`,'RULE 10(c): CROSS ON A HEADING AS NEARLY AS PRACTICABLE AT RIGHT ANGLES TO TRAFFIC FLOW');
+ if(mode==='zone')return pwBaseTSS(`${pwShip(450,335,0,true,own)}<path class="route" d="M450 445 V310" marker-end="url(#pwg)"/><circle cx="450" cy="260" r="28" fill="none" stroke="#a43636" stroke-width="5"/><path d="M430 240 l40 40 M470 240 l-40 40" stroke="#a43636" stroke-width="5"/><text x="500" y="254" class="label warn">NOT A CONVENIENT WAITING AREA</text>`,'PLAN THE COMPLETE CROSSING BEFORE COMMITTING • DO NOT TREAT THE SEPARATION ZONE AS SPARE SEA ROOM');
+ if(mode==='follow')return pwBaseTSS(`${pwShip(330,165,90,true,own)}<path class="route" d="M155 165 H700" marker-end="url(#pwg)"/><text x="260" y="198" class="sub good">PROCEED WITH THE GENERAL DIRECTION OF FLOW</text>`,'IF USING A TRAFFIC LANE: USE THE APPROPRIATE LANE AND ITS GENERAL DIRECTION OF TRAFFIC FLOW');
+ if(mode==='join')return pwBaseTSS(`${pwShip(390,165,90,true,own)}<path class="route" d="M120 165 H690" marker-end="url(#pwg)"/><path class="routeInfo" d="M230 300 Q300 225 390 165" marker-end="url(#pwb)"/><text x="190" y="292" class="sub">SIDE ENTRY / EXIT: SMALL ANGLE</text><line x1="95" y1="95" x2="95" y2="210" stroke="#173744" stroke-width="4"/><text x="110" y="82" class="sub">LANE TERMINATION</text>`,'NORMALLY JOIN OR LEAVE AT A TERMINATION • FROM THE SIDE, USE AS SMALL AN ANGLE TO FLOW AS PRACTICABLE');
+ if(mode==='final')return pwBaseTSS(`${pwShip(450,468,0,true,own)}${pwShip(230,165,90,false,'LANE VESSEL')}${pwShip(670,382,270,false,'LANE VESSEL')}<path class="route" d="M450 445 V62" marker-end="url(#pwg)"/><text x="485" y="435" class="tiny">1 ASSESS</text><text x="485" y="345" class="tiny">2 COMMIT WHEN SAFE</text><text x="485" y="315" class="tiny">3 CROSS CONTINUOUSLY</text><text x="485" y="82" class="tiny">4 CLEAR • KEEP WATCH</text>`,'READ • ASSESS • DO NOT IMPEDE WHERE APPLICABLE • CROSS ON THE RULE 10(c) HEADING • KEEP WATCH');
+ return pwBaseTSS('', 'RULE 10 TRAINING');
+}
+
+// Replace the congested Stage 7 teaching drawings with clean, purpose-built plates.
+if(typeof ttDraw==='function'){
+ ttDraw=function(mode,p){const d=document.getElementById('ttDemo');if(d)d.innerHTML=pwTssPlate(mode)};
+}
+
+function pwExamVisualType(q){
+ const t=(q.q||'').toLowerCase();
+ if(t.includes('using a traffic lane, how'))return 'lane';
+ if(t.includes('traffic flow is east')||t.includes('crossing heading best'))return 'cross';
+ if(t.includes('tide sets')||t.includes('tidal stream'))return 'tide';
+ if(t.includes('what is wrong with the crossing'))return 'wrong';
+ if(t.includes('would have to alter course or speed'))return 'impede';
+ if(t.includes('once committed')||t.includes('sequence best matches'))return 'sequence';
+ if(t.includes('joining a traffic lane from the side')||t.includes('side-entry'))return 'join';
+ if(t.includes('leaving a traffic lane to the side'))return 'leave';
+ if(t.includes('preferred place to join or leave')||t.includes('terminations of a tss'))return 'termination';
+ if(t.includes('separation zone as convenient waiting'))return 'zone';
+ if(t.includes('engaged in fishing near'))return 'fishing';
+ if(t.includes('expressly among those permitted to use an itz'))return 'itz';
+ if(t.includes('correct 90° heading but the traffic picture is unsafe'))return 'traffic';
+ if(t.includes('crossed both traffic lanes and cleared the far side'))return 'clear';
+ if(t.includes("'shall not impede'"))return 'impede';
+ return null;
+}
+function pwExamGraphic(q,review=false){
+ const typ=pwExamVisualType(q); if(!typ)return '';
+ const st=pwProfileStatus(), own=st.nm.toUpperCase(); let extra='',cap='SCENARIO INFORMATION ONLY';
+ if(typ==='lane'){extra=pwShip(330,165,90,true,own)+`<path class="routeInfo" d="M160 165 H690" marker-end="url(#pwb)"/>`;cap='VESSEL USING THE EASTBOUND TRAFFIC LANE';}
+ if(typ==='cross'){extra=pwShip(450,465,0,true,own)+`<path class="routeInfo" d="M450 440 V70" marker-end="url(#pwb)"/>`;cap='EAST–WEST TRAFFIC FLOW • CANDIDATE CROSSING SHOWN WITHOUT A VERDICT';}
+ if(typ==='tide'){extra=pwShip(450,455,0,true,own)+`<path class="routeInfo" d="M450 435 V70" marker-end="url(#pwb)"/><path d="M450 350 C500 300 525 230 545 150" stroke="#0c708f" stroke-width="4" fill="none" stroke-dasharray="9 7" marker-end="url(#pwb)"/><text x="565" y="165" class="tiny">GROUND TRACK WITH TIDAL SET</text>`;cap='BOW HEADING AND GROUND TRACK ARE SHOWN SEPARATELY';}
+ if(typ==='wrong'){extra=pwShip(330,455,25,true,own)+`<path class="routeBad" d="M330 435 L610 80" marker-end="url(#pwa)"/>`;cap='OBSERVE THE CROSSING GEOMETRY AND APPLY RULE 10(c)';}
+ if(typ==='impede'||typ==='traffic'){extra=pwShip(450,455,0,true,own)+pwShip(285,165,90,false,'LANE VESSEL')+`<path class="routeInfo" d="M450 430 V290" marker-end="url(#pwb)"/>`;cap='PLANNED CROSSING WITH LANE-FOLLOWING TRAFFIC';}
+ if(typ==='sequence'){extra=pwShip(450,455,0,true,own)+pwShip(260,165,90,false,'LANE VESSEL')+pwShip(650,382,270,false,'LANE VESSEL')+`<path class="routeInfo" d="M450 430 V70" marker-end="url(#pwb)"/>`;cap='FULL CROSSING PICTURE • CHOOSE THE CORRECT PROCEDURAL SEQUENCE';}
+ if(typ==='join'||typ==='leave'){extra=pwShip(380,165,90,true,own)+`<path class="routeInfo" d="M220 285 Q285 210 380 165" marker-end="url(#pwb)"/>`;cap=typ==='join'?'SIDE ENTRY GEOMETRY • NO CORRECT/INCORRECT MARKING':'SIDE EXIT GEOMETRY • NO CORRECT/INCORRECT MARKING';}
+ if(typ==='termination'){extra=`<line x1="105" y1="95" x2="105" y2="425" stroke="#173744" stroke-width="4"/><text x="120" y="82" class="sub">LANE TERMINATION</text>`+pwShip(185,165,90,true,own);cap='LANE TERMINATION • APPLY THE QUESTIONED RULE';}
+ if(typ==='zone'){extra=pwShip(450,260,0,true,own);cap='VESSEL POSITIONED IN THE SEPARATION ZONE • NO VERDICT SHOWN';}
+ if(typ==='fishing'){extra=`<g transform="translate(450 260)"><circle r="20" fill="#6b7780"/><path d="M-28 -28 L28 28 M28 -28 L-28 28" stroke="#173744" stroke-width="3"/></g><text x="485" y="265" class="tiny">VESSEL ENGAGED IN FISHING</text>`+pwShip(300,165,90,false,'LANE VESSEL');cap='FISHING VESSEL NEAR A TSS • LANE-FOLLOWING TRAFFIC SHOWN';}
+ if(typ==='itz')return `<svg class="pwTssPlate" viewBox="0 0 900 520">${pwTssDefs()}<rect class="sea" width="900" height="520"/><rect class="itz" x="70" y="70" width="760" height="110"/><text x="90" y="105" class="label">INSHORE TRAFFIC ZONE</text>${pwShip(260,140,0,false,'VESSEL A')}${pwShip(450,140,90,false,'VESSEL B')}${pwShip(650,140,270,false,'VESSEL C')}<rect class="lane" x="70" y="220" width="760" height="120"/><path class="flow" d="M120 280 H760" marker-end="url(#pwa)"/><text x="90" y="248" class="label">ADJACENT TRAFFIC LANE</text><rect class="sep" x="70" y="360" width="760" height="65"/><text x="90" y="400" class="label">SEPARATION ZONE</text></svg><div class="pwExamGraphicCaption"><b>ITZ CONTEXT</b><span>Identify the rule from the question — the diagram gives no answer cue.</span></div>`;
+ if(typ==='clear'){extra=pwShip(450,62,0,true,own)+`<path class="routeInfo" d="M450 440 V95" marker-end="url(#pwb)"/>`;cap='YOUR VESSEL HAS CLEARED THE FAR SIDE OF THE SCHEME';}
+ let svg=pwBaseTSS(extra,'');
+ if(review){cap+=' • REVIEW: compare the diagram with the explanation below';}
+ return `${svg}<div class="pwExamGraphicCaption"><b>${cap}</b><span class="${review?'pwReviewCue':''}">${review?'DEBRIEF VIEW':'NEUTRAL EXAM VIEW'}</span></div>`;
+}
+
+// Purpose-built visual mapping. Knowledge-only questions stay text-only by design.
+if(typeof txVisualHTML==='function'){
+ txVisualHTML=function(q,review=false){
+   const g=pwExamGraphic(q,review);
+   if(g)return `<div class="${review?'txReviewVisual':'txVisual'}">${g}</div>`;
+   return `<div class="txKnowledgeOnly"><div><b>RULE 10 KNOWLEDGE</b><span>This item tests a rule principle directly. No diagram is needed.</span></div></div>`;
+ };
+}
+
+// Shuffle answer display while preserving the keyed answer.
+function pwShuffleQuestionAnswers(q){
+ const pairs=q.a.map((text,i)=>({text,correct:i===q.correct}));
+ for(let i=pairs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pairs[i],pairs[j]]=[pairs[j],pairs[i]]}
+ return {...q,a:pairs.map(x=>x.text),correct:pairs.findIndex(x=>x.correct)};
+}
+if(typeof startTSSFullExam==='function'){
+ startTSSFullExam=function(){
+   adaptTSSExamForProfile();
+   tssExamSet=txShuffle(TSS_EXAM_BANK).map(q=>pwShuffleQuestionAnswers({...q,a:[...q.a]}));
+   tssExamAnswers=new Array(tssExamSet.length).fill(null);tssExamIndex=0;tssExamSubmitted=false;renderTSSExamQuestion();
+ };
+}
+if(typeof renderTSSExamQuestion==='function'){
+ renderTSSExamQuestion=function(){
+   if(!tssExamSet.length)return;const q=tssExamSet[tssExamIndex],ans=tssExamAnswers[tssExamIndex],st=pwProfileStatus();
+   $('txProgress').textContent=`Question ${tssExamIndex+1} of ${tssExamSet.length} • ${tssExamAnswers.filter(x=>x!==null).length} answered`;
+   $('txQuestionArea').innerHTML=`<div class="txLayout"><div class="txVisualCard">${txVisualHTML(q)}</div><div class="txQuestionCard"><div class="examQTop"><span class="tag">${q.cat} • ${q.rule}</span>${q.critical?'<span class="tag critical">SAFETY-CRITICAL</span>':''}</div><div class="txRulePrompt pwProfilePrompt"><b>Your vessel: ${st.nm} • ${st.len} • ${st.type}.</b> Operating status: <b>${st.op}</b>. Apply Rule 10 together with the other applicable COLREGs.</div><div class="examQuestion">${q.q}</div><div class="examChoices">${q.a.map((a,i)=>`<button class="${ans===i?'selected':''}" onclick="answerTSSExam(${i})"><b>${String.fromCharCode(65+i)}.</b> ${a}</button>`).join('')}</div><div class="examNav" style="margin-top:auto"><button onclick="tssExamPrev()">← PREVIOUS</button><button onclick="tssExamNext()">NEXT →</button><button class="submit" onclick="submitTSSFullExam()">SUBMIT EXAM</button></div></div></div>`;
+ };
+}
+
+// Finite Rule 10 "Test yourself" checkpoint instead of an endless loop.
+let pwTssQuickOrder=[],pwTssQuickPos=0,pwTssQuickAnswered=false,pwTssQuickScore=0;
+function pwTssQuickStart(){pwTssQuickOrder=txShuffle(TSS_QUESTIONS.map((_,i)=>i));pwTssQuickPos=0;pwTssQuickScore=0;pwTssQuickAnswered=false;pwTssQuickRender()}
+function pwTssQuickRender(){
+ if(!pwTssQuickOrder.length)pwTssQuickStart();
+ const idx=pwTssQuickOrder[pwTssQuickPos];tssQi=idx;tssCurrent=TSS_QUESTIONS[idx];
+ $('tssQ').innerHTML=`<div class="pwTssQuickProgress">QUESTION ${pwTssQuickPos+1} OF ${pwTssQuickOrder.length}</div>${tssCurrent.q}`;
+ $('tssQDiagram').innerHTML=pwExamGraphic({q:tssCurrent.q},false)||pwTssPlate(tssCurrent.mode);
+ $('tssAnswers').innerHTML=tssCurrent.a.map((x,i)=>`<button onclick="answerTSS(${i})">${x}</button>`).join('');$('tssResult').textContent='';$('tssResult').className='quizResult';pwTssQuickAnswered=false;
+}
+nextTSSQuestion=function(){if(!pwTssQuickOrder.length){pwTssQuickStart();return}if(!pwTssQuickAnswered){$('tssResult').textContent='Answer this question before continuing.';$('tssResult').className='quizResult warn';return}pwTssQuickPos++;if(pwTssQuickPos>=pwTssQuickOrder.length){$('tssQ').innerHTML=`<div class="pwTssQuickProgress">CHECKPOINT COMPLETE</div>${pwTssQuickScore}/${pwTssQuickOrder.length} correct`;$('tssQDiagram').innerHTML='';$('tssAnswers').innerHTML=`<button onclick="pwTssQuickStart()">START A NEW CHECKPOINT</button>`;$('tssResult').textContent='You have completed the Rule 10 recognition checkpoint.';$('tssResult').className='quizResult ok';pwTssQuickOrder=[];return}pwTssQuickRender()};
+answerTSS=function(i){if(pwTssQuickAnswered)return;const ok=i===tssCurrent.ok;pwTssQuickAnswered=true;if(ok)pwTssQuickScore++;$('tssResult').textContent=ok?'✓ '+tssCurrent.why:'✗ '+tssCurrent.why;$('tssResult').className='quizResult '+(ok?'ok':'warn')};
+
+// Keep selector identity stable after live profile changes.
+const _pwOldRefreshVesselUI=typeof refreshVesselUI==='function'?refreshVesselUI:null;
+if(_pwOldRefreshVesselUI)refreshVesselUI=function(){const r=_pwOldRefreshVesselUI.apply(this,arguments);setTimeout(pwFixVesselSwitcher,0);return r};
+const _pwOldActivate=window.pwActivateProfile;
+if(_pwOldActivate)window.pwActivateProfile=function(id){const r=_pwOldActivate(id);setTimeout(()=>{pwFixVesselSwitcher();try{adaptTSSExamForProfile();adaptTSSTutorialForProfile()}catch(e){}},0);return r};
+
+// TSS tutorial navigation returns to the TSS menu, not the library.
+const _pwOldHeaderNav=typeof updateHeaderNav==='function'?updateHeaderNav:null;
+function pwTssBackToMenu(){try{ttStopDemo()}catch(e){};showModule('tss');window.scrollTo({top:0,behavior:'smooth'})}
+
+window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{adaptTSSExamForProfile();adaptTSSTutorialForProfile()}catch(e){};setTimeout(()=>{if(document.getElementById('tssTutorialPage')?.classList.contains('active'))ttRender()},50)});
+</script>
 </body></html>
