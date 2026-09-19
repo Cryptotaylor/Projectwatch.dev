@@ -22778,7 +22778,7 @@ const STAGE7_FINAL=[
  ['If your voyage is not using the TSS, what does Rule 10 say?',['Avoid it by as wide a margin as practicable','Cross it repeatedly to shorten the route','Follow the separation line'],0,'Rule 10(h) says a vessel not using a TSS shall avoid it by as wide a margin as practicable.'],
  ['You have the correct right-angle crossing heading, but the developing traffic picture is unsafe. What should you do?',['Remain clear and reassess — correct geometry does not replace collision-risk assessment','Commit because 90 degrees gives priority','Stop in the separation zone'],0,'Rule 10 works with lookout, risk assessment and avoiding-action duties. Geometry alone never makes an unsafe crossing safe.']
 ];
-let s7i=0,s7score=0,s7answered=false;
+let s7i=0,s7score=0,s7answered=false; window.PW_STAGE7_INDEX=()=>s7i;
 function showStage7Final(){
  if(PW_TSS_VISITED.size<TSS_TUTORIAL.length){alert('Review all 9 Stage 7 lessons before starting the final knowledge check.');return}
  document.querySelectorAll('.appPage.active,.screen.active').forEach(p=>p.classList.remove('active'));updateHeaderNav('tss');updateModuleContext('tss');$('stage7FinalPage').classList.add('active');s7i=0;s7score=0;s7answered=false;renderStage7Final();window.scrollTo({top:0,behavior:'smooth'});
@@ -24084,9 +24084,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  window.ttRender=function(){if(typeof baseRender==='function')baseRender.apply(this,arguments);renderPlate();};
  window.ttRunDemo=renderPlate; window.ttDraw=renderPlate;
  window.PW_TSS_TEACHING_PLATE_RENDERER={version:'1.46.31',render:renderPlate,source:'approved-nine-plate-visual-master'};
- window.PROJECT_WATCH_BUILD='1.46.33-TSS-TWO-GRAPHICS-APPROVED';
- const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.33-TSS-TWO-GRAPHICS-APPROVED';
- document.title='Project Watch 1.46.33 • TSS Two Graphics Approved';
+ window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
  try{if($('tssTutorialPage')?.classList.contains('active'))renderPlate();}catch(e){console.error(e)}
 })();
 </script>
@@ -24149,9 +24149,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  // Refresh currently rendered legacy areas if present.
  try{ if(typeof renderTSS==='function') renderTSS(); }catch(e){console.error(e)}
  window.PW_TSS_LEGACY_VISUAL_REFRESH={version:'1.46.32',modes:['base','correct','wrong','join','busy']};
- window.PROJECT_WATCH_BUILD='1.46.33-TSS-TWO-GRAPHICS-APPROVED';
- const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.33-TSS-TWO-GRAPHICS-APPROVED';
- document.title='Project Watch 1.46.33 • TSS Two Graphics Approved';
+ window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
 })();
 </script>
 
@@ -24188,10 +24188,98 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    $('tssResult').className='quizResult';
  };
  window.PW_TSS_APPROVED_QUESTION_GRAPHICS={version:'1.46.33',questions:[1,4]};
- window.PROJECT_WATCH_BUILD='1.46.33-TSS-TWO-GRAPHICS-APPROVED';
+ window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.33-TSS-TWO-GRAPHICS-APPROVED';
- document.title='Project Watch 1.46.33 • TSS Two Graphics Approved';
+ if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
+})();
+</script>
+
+
+<style id="pw-stage7-neutral-assessment-graphics-14634">
+#stage7FinalPage .s7Visual svg.pwS7Neutral{display:block;width:100%;height:auto;max-height:340px;background:#f3ead5}
+</style>
+<script id="pw-stage7-neutral-assessment-graphics-js-14634">
+(function(){
+ const C={cream:'#f3ead5',lane:'#dcecf1',sep:'#f4d1d1',red:'#c94b47',navy:'#0b3a4d',green:'#07876a',blue:'#4f7888',amber:'#a67c2d'};
+ function defs(){return `<defs>
+  <marker id="s7nR" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="${C.red}"/></marker>
+  <marker id="s7nG" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="${C.green}"/></marker>
+ </defs>`}
+ function ship(x,y,rot=0,fill=C.green){return `<g transform="translate(${x} ${y}) rotate(${rot})"><path d="M0,-24 L14,16 L0,27 L-14,16 Z" fill="${fill}" stroke="${C.navy}" stroke-width="3"/></g>`}
+ function base(extra,aria){
+  return `<svg class="pwS7Neutral" viewBox="0 0 900 440" role="img" aria-label="${aria}">${defs()}
+   <rect width="900" height="440" fill="${C.cream}"/>
+   <rect x="65" y="42" width="770" height="105" fill="${C.lane}" stroke="#5b95aa" stroke-width="2"/>
+   <rect x="65" y="168" width="770" height="82" fill="${C.sep}" stroke="${C.red}" stroke-width="2" stroke-dasharray="12 9"/>
+   <rect x="65" y="271" width="770" height="105" fill="${C.lane}" stroke="#5b95aa" stroke-width="2"/>
+   <path d="M110 96H785" stroke="${C.red}" stroke-width="7" marker-end="url(#s7nR)"/>
+   <path d="M790 324H115" stroke="${C.red}" stroke-width="7" marker-end="url(#s7nR)"/>
+   <text x="90" y="75" fill="${C.navy}" font-size="20" font-weight="900">EASTBOUND TRAFFIC</text>
+   <text x="450" y="218" text-anchor="middle" fill="${C.navy}" font-size="21" font-weight="900">SEPARATION ZONE</text>
+   <text x="610" y="354" fill="${C.navy}" font-size="20" font-weight="900">WESTBOUND TRAFFIC</text>
+   ${extra}</svg>`;
+ }
+ function q3(){
+  return base(`
+   ${ship(345,414)}${ship(555,414)}
+   <path d="M345 386V55" stroke="${C.green}" stroke-width="7" stroke-dasharray="12 8" marker-end="url(#s7nG)"/>
+   <path d="M555 386L690 58" stroke="${C.green}" stroke-width="7" stroke-dasharray="12 8" marker-end="url(#s7nG)"/>
+   <text x="345" y="410" text-anchor="middle" fill="${C.navy}" font-size="18" font-weight="900">A</text>
+   <text x="555" y="410" text-anchor="middle" fill="${C.navy}" font-size="18" font-weight="900">B</text>`,
+   'Two candidate crossing headings through opposing traffic lanes, labelled A and B without indicating which is correct');
+ }
+ function q5(){
+  return base(`
+   ${ship(225,414)}${ship(675,414)}
+   <path d="M225 388 C250 330 295 292 365 292 C455 292 520 292 610 292" fill="none" stroke="${C.green}" stroke-width="7" stroke-dasharray="12 8" marker-end="url(#s7nG)"/>
+   <path d="M675 388V285" fill="none" stroke="${C.green}" stroke-width="7" stroke-dasharray="12 8" marker-end="url(#s7nG)"/>
+   <text x="225" y="410" text-anchor="middle" fill="${C.navy}" font-size="18" font-weight="900">A</text>
+   <text x="675" y="410" text-anchor="middle" fill="${C.navy}" font-size="18" font-weight="900">B</text>`,
+   'Two candidate ways of joining the westbound traffic lane from the side, labelled A and B without indicating which is correct');
+ }
+ function q6(){
+  return base(`
+   <circle cx="450" cy="209" r="13" fill="${C.amber}" stroke="${C.navy}" stroke-width="3"/>
+   <text x="450" y="402" text-anchor="middle" fill="${C.navy}" font-size="18" font-weight="900">SEPARATION FEATURE IDENTIFIED</text>`,
+   'Traffic separation scheme with the central separation zone neutrally identified');
+ }
+ function q7(){
+  return base(`
+   ${ship(300,404,0,C.green)}
+   ${ship(600,96,90,C.blue)}
+   <path d="M300 376V292" stroke="${C.green}" stroke-width="5" stroke-dasharray="10 7"/>
+   <text x="325" y="405" fill="${C.navy}" font-size="18" font-weight="900">WATCH ONE • 14.2 m</text>
+   <text x="600" y="132" text-anchor="middle" fill="${C.navy}" font-size="18" font-weight="900">POWER-DRIVEN VESSEL</text>`,
+   'Watch One, a 14.2 metre vessel, approaching a traffic separation scheme while a power-driven vessel follows the eastbound lane');
+ }
+ function q10(){
+  return base(`
+   ${ship(450,414)}
+   <path d="M450 386V286" stroke="${C.green}" stroke-width="7" stroke-dasharray="12 8" marker-end="url(#s7nG)"/>
+   ${ship(350,96,90,C.blue)}${ship(610,96,90,C.blue)}
+   ${ship(570,324,270,C.blue)}${ship(330,324,270,C.blue)}
+   <path d="M385 112L440 270" stroke="${C.amber}" stroke-width="4" stroke-dasharray="8 7"/>
+   <path d="M515 308L462 270" stroke="${C.amber}" stroke-width="4" stroke-dasharray="8 7"/>
+   <text x="450" y="405" text-anchor="middle" fill="${C.navy}" font-size="18" font-weight="900">WATCH ONE • PLANNED CROSSING</text>`,
+   'Watch One remains outside the traffic lane on a planned right-angle crossing while traffic in both lanes makes the developing crossing gap unsuitable');
+ }
+ const neutral={2:q3,4:q5,5:q6,6:q7,9:q10};
+ const previous=window.renderStage7Final;
+ if(typeof previous==='function'){
+   window.renderStage7Final=function(){
+     const result=previous.apply(this,arguments);
+     const make=neutral[(window.PW_STAGE7_INDEX?window.PW_STAGE7_INDEX():-1)];
+     const box=document.querySelector('#stage7FinalRoot .s7Visual');
+     if(make&&box) box.innerHTML=make();
+     return result;
+   };
+ }
+ window.PW_STAGE7_NEUTRAL_ASSESSMENT_GRAPHICS={version:'1.46.34',questions:[3,5,6,7,10]};
+ window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ const vb=document.getElementById('pwVisibleBuild');
+ if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
 })();
 </script>
 
