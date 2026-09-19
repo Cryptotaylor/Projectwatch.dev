@@ -16754,7 +16754,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
   </div>
   <div class="tssLesson">
    <div class="ver">JOIN / LEAVE</div><h3>Do not confuse crossing with joining</h3>
-   <p class="note">When joining or leaving a lane, do so at as small an angle to the general direction of traffic flow as practicable. A crossing should cross the entire lane without stopping except in emergency.</p>
+   <p class="note">When joining or leaving a lane from the side, do so at as small an angle to the general direction of traffic flow as practicable. This is different from crossing, where the heading should be as nearly as practicable at right angles to traffic flow.</p>
    <div id="tssJoinDiagram" class="tssDiagram"></div>
   </div>
  </div>
@@ -24084,10 +24084,74 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  window.ttRender=function(){if(typeof baseRender==='function')baseRender.apply(this,arguments);renderPlate();};
  window.ttRunDemo=renderPlate; window.ttDraw=renderPlate;
  window.PW_TSS_TEACHING_PLATE_RENDERER={version:'1.46.31',render:renderPlate,source:'approved-nine-plate-visual-master'};
- window.PROJECT_WATCH_BUILD='1.46.31-TSS-TEXT-VISUAL-AUDIT';
- const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.31-TSS-TEXT-VISUAL-AUDIT';
- document.title='Project Watch 1.46.31 • TSS Text + Visual Audit';
+ window.PROJECT_WATCH_BUILD='1.46.32-TSS-LEGACY-VISUAL-CONSISTENCY';
+ const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.32-TSS-LEGACY-VISUAL-CONSISTENCY';
+ document.title='Project Watch 1.46.32 • TSS Visual Consistency';
  try{if($('tssTutorialPage')?.classList.contains('active'))renderPlate();}catch(e){console.error(e)}
+})();
+</script>
+
+
+<style id="pw-tss-legacy-visual-refresh-14632">
+#tssLearn .tssDiagram svg,#tssExamples .tssDiagram svg,#tssTest .tssDiagram svg{
+ display:block;width:100%;height:auto;background:#f3ead5;border-radius:14px
+}
+</style>
+<script id="pw-tss-legacy-visual-refresh-js-14632">
+(function(){
+ const C={cream:'#f3ead5',lane:'#dfeff4',pink:'#f5d2d2',red:'#c84b47',navy:'#08364b',green:'#07876a',blue:'#1884b8',outline:'#4e879d'};
+ const defs=`<defs>
+  <marker id="pwR" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="${C.red}"/></marker>
+  <marker id="pwG" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="${C.green}"/></marker>
+ </defs>`;
+ function ship(x,y,rot=0,fill=C.green){return `<g transform="translate(${x} ${y}) rotate(${rot})"><path d="M0,-25 L15,18 L0,28 L-15,18 Z" fill="${fill}" stroke="${C.navy}" stroke-width="3"/></g>`}
+ function frame(inner,label=''){
+  return `<svg viewBox="0 0 900 520" role="img" aria-label="${label}">${defs}
+   <rect width="900" height="520" rx="18" fill="${C.cream}"/>
+   <rect x="55" y="45" width="790" height="120" fill="${C.lane}" stroke="${C.outline}" stroke-width="2"/>
+   <rect x="55" y="195" width="790" height="100" fill="${C.pink}" stroke="${C.red}" stroke-width="2" stroke-dasharray="12 9"/>
+   <rect x="55" y="325" width="790" height="120" fill="${C.lane}" stroke="${C.outline}" stroke-width="2"/>
+   <text x="80" y="78" fill="${C.navy}" font-size="22" font-weight="900">EASTBOUND TRAFFIC</text>
+   <text x="450" y="253" text-anchor="middle" fill="${C.navy}" font-size="23" font-weight="900">SEPARATION ZONE</text>
+   <text x="610" y="420" fill="${C.navy}" font-size="22" font-weight="900">WESTBOUND TRAFFIC</text>
+   <path d="M100 112 H800" stroke="${C.red}" stroke-width="7" marker-end="url(#pwR)"/>
+   <path d="M800 382 H100" stroke="${C.red}" stroke-width="7" marker-end="url(#pwR)"/>
+   ${inner}</svg>`;
+ }
+ window.tssSVG=function(mode='base'){
+  if(mode==='base'){
+   return frame(`${ship(450,480)}<path d="M450 450 V365" stroke="${C.green}" stroke-width="7" stroke-dasharray="12 8" marker-end="url(#pwG)"/>
+    <path d="M420 450 L350 385" stroke="${C.green}" stroke-width="6" stroke-dasharray="11 8" marker-end="url(#pwG)"/>
+    <path d="M480 450 L550 385" stroke="${C.green}" stroke-width="6" stroke-dasharray="11 8" marker-end="url(#pwG)"/>`,'Rule 10 traffic separation scheme overview');
+  }
+  if(mode==='correct'){
+   return frame(`${ship(450,480)}<path d="M450 450 V80" stroke="${C.green}" stroke-width="8" marker-end="url(#pwG)"/>
+    <path d="M450 365 C490 315 520 255 540 185" fill="none" stroke="${C.blue}" stroke-width="5" stroke-dasharray="10 8"/>
+    <path d="M450 348 h42 v-42" fill="none" stroke="${C.green}" stroke-width="5"/>
+    <text x="500" y="340" fill="${C.navy}" font-size="24" font-weight="900">90° HEADING</text>
+    <text x="545" y="205" fill="${C.blue}" font-size="17" font-weight="800">COG / TIDAL SET</text>`,'Correct Rule 10 crossing: heading at right angles, ground track may be set by tide');
+  }
+  if(mode==='wrong'){
+   return frame(`${ship(330,480,45,C.red)}<path d="M330 450 L690 80" stroke="${C.red}" stroke-width="8" stroke-dasharray="13 9" marker-end="url(#pwR)"/>
+    <text x="520" y="335" fill="${C.red}" font-size="28" font-weight="900">✕ DIAGONAL HEADING</text>`,'Incorrect diagonal Rule 10 crossing heading');
+  }
+  if(mode==='join'){
+   return frame(`${ship(300,470,55)}<path d="M300 440 C345 380 400 350 480 348 C590 345 670 345 745 345" fill="none" stroke="${C.green}" stroke-width="8" stroke-dasharray="12 8" marker-end="url(#pwG)"/>
+    <text x="330" y="315" fill="${C.green}" font-size="22" font-weight="900">JOIN AT A SMALL ANGLE</text>`,'Joining a traffic lane from the side at a small angle to traffic flow');
+  }
+  if(mode==='busy'){
+   return frame(`${ship(450,480)}<path d="M450 450 V345" stroke="${C.green}" stroke-width="7" stroke-dasharray="12 8" marker-end="url(#pwG)"/>
+    ${ship(290,112,90,'#6d8792')}${ship(650,112,90,'#6d8792')}${ship(650,382,270,'#6d8792')}${ship(270,382,270,'#6d8792')}
+    <text x="450" y="485" text-anchor="middle" fill="${C.navy}" font-size="17" font-weight="900">ASSESS ALL TRAFFIC — OTHER COLREGs STILL APPLY</text>`,'Busy TSS traffic: assess all vessels and continue applying the COLREGs');
+  }
+  return frame('','Rule 10 traffic separation scheme');
+ };
+ // Refresh currently rendered legacy areas if present.
+ try{ if(typeof renderTSS==='function') renderTSS(); }catch(e){console.error(e)}
+ window.PW_TSS_LEGACY_VISUAL_REFRESH={version:'1.46.32',modes:['base','correct','wrong','join','busy']};
+ window.PROJECT_WATCH_BUILD='1.46.32-TSS-LEGACY-VISUAL-CONSISTENCY';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.32-TSS-LEGACY-VISUAL-CONSISTENCY';
+ document.title='Project Watch 1.46.32 • TSS Visual Consistency';
 })();
 </script>
 
