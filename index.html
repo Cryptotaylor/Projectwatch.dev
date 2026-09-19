@@ -24608,4 +24608,100 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
 })();
 </script>
 
+
+
+<!-- Build 1.46.48 — Stage 3 fact-box readability + Stage 2→3 transition hardening. -->
+<style id="pw-stage3-readability-14648">
+/* Stage 3 only. Preserve all approved Lights & Shapes artwork and recognition graphics. */
+#lightsTutorialPage .lsFact{padding:13px 15px!important}
+#lightsTutorialPage .lsFact b{font-size:15px!important;line-height:1.3!important;font-weight:900!important}
+#lightsTutorialPage .lsFact span{font-size:14px!important;line-height:1.48!important;margin-top:5px!important}
+</style>
+<script id="pw-stage2-stage3-transition-14648">
+(function(){
+ 'use strict';
+ /* Re-enter Stage 3 on a clean event turn after saving Stage 2. This avoids a
+    transient stale/covered UI state observed once on iPad/Safari. */
+ window.completeStage2=function(){
+   if(!crLessonsComplete()){alert('Complete all six Stage 2 teaching lessons first.');return}
+   if(crQuizIndex<CR_QUIZ.length||crQuizScore<8){alert('Complete the Stage 2 final check with at least 8/10 first.');return}
+   const pct=Math.round(crQuizScore/CR_QUIZ.length*100);
+   courseRecordComplete('foundations',pct);
+   stopCourseSpeech();
+   document.activeElement?.blur?.();
+   window.scrollTo({top:0,behavior:'auto'});
+   setTimeout(function(){
+     courseRecordStart('lights');
+     showLightsTutorial();
+     window.scrollTo({top:0,behavior:'auto'});
+   },0);
+ };
+ window.PW_STAGE3_QA={version:'1.46.48',factBoxReadability:true,stage2TransitionHardened:true};
+ window.PROJECT_WATCH_BUILD='1.46.48-STAGE3-READABILITY-TRANSITION';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.48-STAGE3-READABILITY-TRANSITION';
+})();
+</script>
+
+
+
+<!-- Build 1.46.49 — platform-wide readable typography standard.
+     Scope: text-box typography only. No teaching content, questions, answers, graphics, scoring or navigation logic changed. -->
+<style id="pw-platform-typography-standard-14649">
+/* Core readable standard for prose inside teaching / reference / assessment boxes. */
+.orientationLessonCard p,.orientationLessonCard span,
+.lessonBody p,.lessonText,.tutorialLessonBody p,.tutorialCoachText,
+.crFact span,
+.lsFact p,.lsTeachCard p,.lsCard p,
+.sigFact p,.sigCard p,.audioLabCard p,
+.s5Fact p,.s5Card p,
+.btFacts p,.markCard p,.buoyStartCard p,.bxTypeNote,.bpAssessmentNote,
+.ttFacts span,.ttCoach p,.tssCard p,.tssPracticalCard p,.bridgeRef p,
+.aisLearnCard p,.aisCoachCard p,.aisTeachingCard p,.aisTargetNote,.aisTrafficNote,
+.contextRuleCard p,.ruleCard p,.detailCard p,.debriefCard p,.scenarioCard p,
+.examIntroCard p,.examStandardNote,.examSourceNote,.practicalExamCard p,
+.referenceText,.ruleText{
+  font-size:15px!important;
+  line-height:1.5!important;
+}
+/* Box headings should remain clearly distinct from body copy. */
+.orientationLessonCard b,.orientationLessonCard h4,
+.crFact b,
+.lsFact b,.lsTeachCard h4,.lsCard h4,
+.sigFact b,.sigCard h4,.audioLabCard h4,
+.s5Fact b,.s5Card h4,
+.btFacts b,.markCard h4,.buoyStartCard h4,
+.ttFacts b,.tssCard h4,.tssPracticalCard h4,.bridgeRef h3,
+.aisLearnCard h4,.aisCoachCard h4,.aisTeachingCard h4,
+.contextRuleCard h4,.ruleCard h4,.detailCard h4,.debriefCard h4,.scenarioCard h4,
+.examIntroCard h3,.practicalExamCard h3{
+  font-size:17px!important;
+  line-height:1.3!important;
+}
+/* Secondary labels may be smaller, but never microscopic on tablet/desktop. */
+.sourceNote,.voiceNote,.scenarioBadge,.tapHint,.s7FinalHint,.s7Legend,
+.examProgressText,.pwCompleteNote,.angleTag,.ecdisLegend span,
+.tssSimHud small,.ecdisHud small{
+  font-size:12px!important;
+  line-height:1.4!important;
+}
+/* Stage 3 approved graphics remain untouched; only their explanatory text is enlarged. */
+#lightsTutorialPage .lsLessonFacts .lsFact p{font-size:15px!important;line-height:1.5!important}
+#lightsTutorialPage .lsLessonFacts .lsFact b{font-size:17px!important;line-height:1.3!important}
+/* Keep compact navigation readable without changing its geometry. */
+.sigLessonNav button,.s5LessonNav button{font-size:12px!important;line-height:1.25!important}
+.sigLessonActions button,.s5LessonActions button{font-size:14px!important;line-height:1.3!important}
+@media(max-width:760px){
+  .orientationLessonCard p,.lessonBody p,.lessonText,.tutorialLessonBody p,
+  .crFact span,.lsFact p,.lsTeachCard p,.sigFact p,.s5Fact p,
+  .ttFacts span,.ttCoach p,.tssCard p,.aisLearnCard p,.aisTeachingCard p,
+  .contextRuleCard p,.ruleCard p,.detailCard p{font-size:15px!important}
+}
+</style>
+<script id="pw-platform-typography-marker-14649">
+(function(){
+ window.PW_PLATFORM_TYPOGRAPHY={version:'1.46.49',standard:'readable-box-copy'};
+ window.PROJECT_WATCH_BUILD='1.46.49-PLATFORM-TYPOGRAPHY-STANDARD';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.49-PLATFORM-TYPOGRAPHY-STANDARD';
+})();
+</script>
 </body></html>
