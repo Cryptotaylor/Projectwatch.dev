@@ -17290,7 +17290,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
   <div id="collisionKnowledgeExam" class="collisionExamSection active">
     <div class="examIntroGrid">
       <div class="examIntroCard"><span>20</span><b>RANDOM QUESTIONS</b><small>Balanced across the collision syllabus. A fresh set is drawn from the larger Project Watch bank each run.</small></div>
-      <div class="examIntroCard"><span>90%</span><b>PROJECT WATCH PASS</b><small>Chosen to match the current MCA Part A COLREG topic threshold, but this is not an MCA examination.</small></div>
+      <div class="examIntroCard"><span>90%</span><b>PROJECT WATCH PASS</b><small>Project Watch uses a 90% COLREG benchmark, matching the current MCA Part A minimum for the International Collision Regulations topic. This remains an independent Project Watch mock, not an MCA examination.</small></div>
       <div class="examIntroCard"><span>!</span><b>CRITICAL-FAIL LOGIC</b><small>An unsafe answer to a designated safety-critical item prevents a pass.</small></div>
     </div>
     <div class="examToolbar">
@@ -24088,8 +24088,8 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  window.ttRender=function(){if(typeof baseRender==='function')baseRender.apply(this,arguments);renderPlate();};
  window.ttRunDemo=renderPlate; window.ttDraw=renderPlate;
  window.PW_TSS_TEACHING_PLATE_RENDERER={version:'1.46.31',render:renderPlate,source:'approved-nine-plate-visual-master'};
- window.PROJECT_WATCH_BUILD='1.46.45-STAGE4-ARTWORK-COMPLETE';
- const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.45-STAGE4-ARTWORK-COMPLETE';
+ window.PROJECT_WATCH_BUILD='1.46.46-ASSESSMENT-QA-HARDENING';
+ const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.46-ASSESSMENT-QA-HARDENING';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
  try{if($('tssTutorialPage')?.classList.contains('active'))renderPlate();}catch(e){console.error(e)}
 })();
@@ -24153,8 +24153,8 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  // Refresh currently rendered legacy areas if present.
  try{ if(typeof renderTSS==='function') renderTSS(); }catch(e){console.error(e)}
  window.PW_TSS_LEGACY_VISUAL_REFRESH={version:'1.46.32',modes:['base','correct','wrong','join','busy']};
- window.PROJECT_WATCH_BUILD='1.46.45-STAGE4-ARTWORK-COMPLETE';
- const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.45-STAGE4-ARTWORK-COMPLETE';
+ window.PROJECT_WATCH_BUILD='1.46.46-ASSESSMENT-QA-HARDENING';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.46-ASSESSMENT-QA-HARDENING';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24192,9 +24192,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    $('tssResult').className='quizResult';
  };
  window.PW_TSS_APPROVED_QUESTION_GRAPHICS={version:'1.46.33',questions:[1,4]};
- window.PROJECT_WATCH_BUILD='1.46.45-STAGE4-ARTWORK-COMPLETE';
+ window.PROJECT_WATCH_BUILD='1.46.46-ASSESSMENT-QA-HARDENING';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.45-STAGE4-ARTWORK-COMPLETE';
+ if(vb)vb.textContent='BUILD 1.46.46-ASSESSMENT-QA-HARDENING';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24280,9 +24280,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    };
  }
  window.PW_STAGE7_NEUTRAL_ASSESSMENT_GRAPHICS={version:'1.46.34',questions:[3,5,6,7,10]};
- window.PROJECT_WATCH_BUILD='1.46.45-STAGE4-ARTWORK-COMPLETE';
+ window.PROJECT_WATCH_BUILD='1.46.46-ASSESSMENT-QA-HARDENING';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.45-STAGE4-ARTWORK-COMPLETE';
+ if(vb)vb.textContent='BUILD 1.46.46-ASSESSMENT-QA-HARDENING';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24332,9 +24332,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  document.addEventListener('click',()=>setTimeout(addBackToTSS,0));
  setTimeout(addBackToTSS,0);
 
- window.PROJECT_WATCH_BUILD='1.46.45-STAGE4-ARTWORK-COMPLETE';
+ window.PROJECT_WATCH_BUILD='1.46.46-ASSESSMENT-QA-HARDENING';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.45-STAGE4-ARTWORK-COMPLETE';
+ if(vb)vb.textContent='BUILD 1.46.46-ASSESSMENT-QA-HARDENING';
  document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
@@ -24464,4 +24464,96 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
 #sigLessonApp .sigPatternFact > b{font-size:27px!important;letter-spacing:.12em}
 #sigLessonApp .sigFact > p{font-size:17px!important;line-height:1.45!important}
 </style>
+
+
+<!-- Build 1.46.46 — platform-wide assessment QA hardening.
+     Scope: assessment integrity only. Signed-off teaching content, graphics and lesson structure are unchanged. -->
+<script id="pw14646AssessmentQaHardening">
+(function(){
+ 'use strict';
+
+ function shuffle(a){
+   const x=[...a];
+   for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}
+   return x;
+ }
+ function shuffleObjectQuestion(q){
+   const pairs=q.a.map((text,i)=>({text,ok:i===q.correct}));
+   const mixed=shuffle(pairs);
+   return {...q,a:mixed.map(x=>x.text),correct:mixed.findIndex(x=>x.ok)};
+ }
+ function shuffleArrayQuestionInPlace(q){
+   if(!q||!Array.isArray(q[1])||!Number.isInteger(q[2]))return q;
+   const pairs=q[1].map((text,i)=>({text,ok:i===q[2]}));
+   const mixed=shuffle(pairs);
+   q[1]=mixed.map(x=>x.text);q[2]=mixed.findIndex(x=>x.ok);return q;
+ }
+ function reshuffleArrayBank(bank){if(Array.isArray(bank))bank.forEach(shuffleArrayQuestionInPlace)}
+
+ // Optional/full mocks record performance but must never award structured-course completion.
+ window.courseRecordAssessmentScore=function(id,score){
+   const c=courseState();c.best=c.best||{};c.started=c.started||{};
+   c.started[id]=c.started[id]||Date.now();c.best[id]=Math.max(Number(c.best[id]||0),Number(score||0));
+   courseSave(c);updateHomeCourseProgress();
+ };
+
+ // Advanced Collision Knowledge mock: balanced random questions + independently shuffled choices.
+ startCollisionKnowledgeExam=function(){
+   collisionExamSet=buildBalancedCollisionExam(20).map(q=>shuffleObjectQuestion({...q,a:[...q.a]}));
+   collisionExamAnswers=new Array(collisionExamSet.length).fill(null);collisionExamIndex=0;collisionExamSubmitted=false;renderCollisionKnowledgeQuestion();
+ };
+ const _submitCollisionKnowledgeExam=submitCollisionKnowledgeExam;
+ submitCollisionKnowledgeExam=function(){
+   if(!collisionExamSet.length||collisionExamSubmitted)return;
+   const recorder=courseRecordScore;courseRecordScore=(id,score,pass)=>courseRecordAssessmentScore(id,score);
+   try{return _submitCollisionKnowledgeExam()}finally{courseRecordScore=recorder}
+ };
+
+ // Captain's Oral: random eight plus shuffled response positions.
+ startCollisionOralExam=function(){
+   collisionOralSet=pwShuffle(COLLISION_ORAL_BANK).slice(0,8).map(q=>shuffleObjectQuestion({...q,a:[...q.a]}));
+   collisionOralAnswers=new Array(collisionOralSet.length).fill(null);collisionOralIndex=0;collisionOralSubmitted=false;renderCollisionOralQuestion();
+ };
+
+ // Advanced Lights, Buoyage and TSS mocks: shuffle answer positions and keep them practice-only.
+ startLightsFullExam=function(){
+   lightsExamSet=lxShuffle(LIGHTS_EXAM_BANK).map(q=>shuffleObjectQuestion({...q,a:[...q.a]}));
+   lightsExamAnswers=new Array(lightsExamSet.length).fill(null);lightsExamIndex=0;lightsExamSubmitted=false;renderLightsExamQuestion();
+ };
+ const _submitLightsFullExam=submitLightsFullExam;
+ submitLightsFullExam=function(){const recorder=courseRecordScore;courseRecordScore=(id,score,pass)=>courseRecordAssessmentScore(id,score);try{return _submitLightsFullExam()}finally{courseRecordScore=recorder}};
+
+ startBuoyageExam=function(){
+   stopBxAnimation();buoyExamSet=bxShuffle(BUOY_EXAM_BANK).map(q=>shuffleObjectQuestion({...q,a:[...q.a]}));
+   buoyExamAnswers=new Array(buoyExamSet.length).fill(null);buoyExamIndex=0;buoyExamSubmitted=false;renderBuoyExamQuestion();
+ };
+ const _submitBuoyageExam=submitBuoyageExam;
+ submitBuoyageExam=function(){const recorder=courseRecordScore;courseRecordScore=(id,score,pass)=>courseRecordAssessmentScore(id,score);try{return _submitBuoyageExam()}finally{courseRecordScore=recorder}};
+
+ // TSS already had safe choice shuffling; preserve it and remove only the mock-to-course completion side effect.
+ const _submitTSSFullExam=submitTSSFullExam;
+ submitTSSFullExam=function(){const recorder=courseRecordScore;courseRecordScore=(id,score,pass)=>courseRecordAssessmentScore(id,score);try{return _submitTSSFullExam()}finally{courseRecordScore=recorder}};
+
+ // Structured final checks: randomise answer positions without changing wording, explanations or scoring.
+ reshuffleArrayBank(ORIENTATION_QUIZ);
+ reshuffleArrayBank(CR_QUIZ);
+ reshuffleArrayBank(LS_FINAL_QUIZ);
+ reshuffleArrayBank(SIG_FINAL_QUIZ);
+ reshuffleArrayBank(STAGE5_FINAL);
+
+ function wrapRestart(name,bank){
+   const old=window[name];if(typeof old!=='function')return;
+   window[name]=function(){reshuffleArrayBank(bank);return old.apply(this,arguments)};
+ }
+ wrapRestart('restartOrientationQuiz',ORIENTATION_QUIZ);
+ wrapRestart('crRestartQuiz',CR_QUIZ);
+ wrapRestart('lsRestartFinal',LS_FINAL_QUIZ);
+ wrapRestart('sigRestartFinal',SIG_FINAL_QUIZ);
+ wrapRestart('stage5RestartFinal',STAGE5_FINAL);
+
+ window.PW_ASSESSMENT_QA={version:'1.46.46',answerShuffle:true,mocksDoNotCompleteCourse:true,mcaWordingVerified:true};
+ window.PROJECT_WATCH_BUILD='1.46.46-ASSESSMENT-QA-HARDENING';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.46-ASSESSMENT-QA-HARDENING';
+})();
+</script>
 </body></html>
