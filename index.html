@@ -24084,9 +24084,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  window.ttRender=function(){if(typeof baseRender==='function')baseRender.apply(this,arguments);renderPlate();};
  window.ttRunDemo=renderPlate; window.ttDraw=renderPlate;
  window.PW_TSS_TEACHING_PLATE_RENDERER={version:'1.46.31',render:renderPlate,source:'approved-nine-plate-visual-master'};
- window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
- const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
- document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
+ window.PROJECT_WATCH_BUILD='1.46.35-STAGE7-BACK-TO-TSS';
+ const vb=$('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.35-STAGE7-BACK-TO-TSS';
+ document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
  try{if($('tssTutorialPage')?.classList.contains('active'))renderPlate();}catch(e){console.error(e)}
 })();
 </script>
@@ -24149,9 +24149,9 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  // Refresh currently rendered legacy areas if present.
  try{ if(typeof renderTSS==='function') renderTSS(); }catch(e){console.error(e)}
  window.PW_TSS_LEGACY_VISUAL_REFRESH={version:'1.46.32',modes:['base','correct','wrong','join','busy']};
- window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
- const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
- document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
+ window.PROJECT_WATCH_BUILD='1.46.35-STAGE7-BACK-TO-TSS';
+ const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.35-STAGE7-BACK-TO-TSS';
+ document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
 
@@ -24188,10 +24188,10 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    $('tssResult').className='quizResult';
  };
  window.PW_TSS_APPROVED_QUESTION_GRAPHICS={version:'1.46.33',questions:[1,4]};
- window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ window.PROJECT_WATCH_BUILD='1.46.35-STAGE7-BACK-TO-TSS';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
- document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
+ if(vb)vb.textContent='BUILD 1.46.35-STAGE7-BACK-TO-TSS';
+ document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
 
@@ -24276,10 +24276,62 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
    };
  }
  window.PW_STAGE7_NEUTRAL_ASSESSMENT_GRAPHICS={version:'1.46.34',questions:[3,5,6,7,10]};
- window.PROJECT_WATCH_BUILD='1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
+ window.PROJECT_WATCH_BUILD='1.46.35-STAGE7-BACK-TO-TSS';
  const vb=document.getElementById('pwVisibleBuild');
- if(vb)vb.textContent='BUILD 1.46.34-STAGE7-NEUTRAL-ASSESSMENT';
- document.title='Project Watch 1.46.34 • Stage 7 Neutral Assessment';
+ if(vb)vb.textContent='BUILD 1.46.35-STAGE7-BACK-TO-TSS';
+ document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
+})();
+</script>
+
+
+<style id="pw-stage7-result-back-to-tss-14635">
+#stage7FinalRoot .pwS7ResultNav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+</style>
+<script id="pw-stage7-result-back-to-tss-js-14635">
+(function(){
+ function addBackToTSS(){
+   const root=document.getElementById('stage7FinalRoot');
+   if(!root) return;
+   const resultText=root.textContent||'';
+   if(!/REVIEW AND TRY AGAIN|STAGE 7 FINAL.*RESULT|\/ 10/i.test(resultText)) return;
+   const buttons=[...root.querySelectorAll('button')];
+   if(buttons.some(b=>/BACK TO TSS$/i.test((b.textContent||'').trim()))) return;
+
+   const tryBtn=buttons.find(b=>/TRY AGAIN/i.test(b.textContent||''));
+   if(!tryBtn) return;
+
+   const wrap=tryBtn.parentElement;
+   if(wrap) wrap.classList.add('pwS7ResultNav');
+
+   const back=document.createElement('button');
+   back.type='button';
+   back.textContent='← BACK TO TSS';
+   back.setAttribute('aria-label','Back to TSS module');
+   back.onclick=function(){
+     const candidates=['openTSS','showTSS','goTSS','openTssTraining','backToTSS'];
+     for(const name of candidates){
+       if(typeof window[name]==='function'){ window[name](); return; }
+     }
+     const existing=[...root.querySelectorAll('button')].find(b=>/BACK TO TSS TRAINING/i.test(b.textContent||''));
+     if(existing){ existing.click(); return; }
+   };
+   if(wrap) wrap.appendChild(back);
+ }
+ const original=window.renderStage7Final;
+ if(typeof original==='function'){
+   window.renderStage7Final=function(){
+     const r=original.apply(this,arguments);
+     setTimeout(addBackToTSS,0);
+     return r;
+   };
+ }
+ document.addEventListener('click',()=>setTimeout(addBackToTSS,0));
+ setTimeout(addBackToTSS,0);
+
+ window.PROJECT_WATCH_BUILD='1.46.35-STAGE7-BACK-TO-TSS';
+ const vb=document.getElementById('pwVisibleBuild');
+ if(vb)vb.textContent='BUILD 1.46.35-STAGE7-BACK-TO-TSS';
+ document.title='Project Watch 1.46.35 • Stage 7 Back to TSS';
 })();
 </script>
 
