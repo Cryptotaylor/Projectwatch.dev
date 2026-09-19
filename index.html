@@ -16372,7 +16372,7 @@ svg{width:100%;height:100%}.own{fill:#fff}.tgt{fill:#ff655f}.ot{fill:none;stroke
 </div>
 <div class="app">
 <header>
-  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.25-TSS-TEACHING-PLATES</div></div>
+  <div><div class="brand">PROJECT WATCH</div><div class="ver" id="pwVisibleBuild">BUILD 1.46.26-TSS-PLATE-REDESIGN</div></div>
   <div class="headerRight">
     <button class="vesselProfileOpen" onclick="openVesselSetup(false)">⚓ MY VESSEL</button>
     <div id="hdrMode">WATCH ONE</div>
@@ -23677,13 +23677,13 @@ h3,h4,h5,h6,.cardTitle,.moduleTitle,.scenarioTitle{
 
 
 <style>.scenarioPhoto,.scenarioGeometry,.scenarioPhotoShade,.scenarioAspectChip,.scenarioVisualTag{display:none!important}</style>
-<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';</script>
-<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';</script>
+<script id="pwBuildMarker">window.PROJECT_WATCH_BUILD='1.46.26-TSS-PLATE-REDESIGN';</script>
+<script id="pwBuild14622">window.PROJECT_WATCH_BUILD='1.46.26-TSS-PLATE-REDESIGN';</script>
 
 <script id="pw14624js">
 /* Build 1.46.24 — TSS Visual QA + brand abstraction groundwork */
 window.PW_BRAND=Object.freeze({productName:'Project Watch',shortName:'Project Watch',tagline:'Maritime watchkeeping training',creatorBrand:"Taylor’s on the Tide",copyrightOwner:'Clifton Taylor',copyrightYear:'2026'});
-window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';
+window.PROJECT_WATCH_BUILD='1.46.26-TSS-PLATE-REDESIGN';
 
 function pwBrandApply(){
   const b=window.PW_BRAND;
@@ -23861,7 +23861,7 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
 <script id="pw14625js">
 (function(){
  'use strict';
- window.PROJECT_WATCH_BUILD='1.46.25-TSS-TEACHING-PLATES';
+ window.PROJECT_WATCH_BUILD='1.46.26-TSS-PLATE-REDESIGN';
  // Keep the selector as three immutable profile identities. Personalisation must never rename these controls.
  function lockProfileSelector(){
    const labels={pwWatch1Btn:'WATCH ONE',pwWatch2Btn:'WATCH TWO',pwCustomBtn:'MY VESSEL'};
@@ -23905,4 +23905,64 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
 })();
 </script>
 
+
+<style id="pw-tss-plate-redesign-14626">
+/* 1.46.26 — TSS beginner teaching-plate redesign. Scope: guided plates only. */
+#tssTutorialPage .ttDemo{background:#f3ead5!important;overflow:hidden!important;border-radius:16px!important}
+#tssTutorialPage .ttDemo svg.pwTssPlate26{display:block!important;width:100%!important;height:auto!important;aspect-ratio:900/560!important;background:#f3ead5!important}
+#tssTutorialPage .ttFacts{gap:12px!important}
+#tssTutorialPage .ttFacts>div{min-height:132px!important;padding:18px 20px!important}
+#tssTutorialPage .ttFacts small{font-size:15px!important;line-height:1.25!important;margin-bottom:8px!important;letter-spacing:.045em!important}
+#tssTutorialPage .ttFacts b{font-size:18px!important;line-height:1.48!important;font-weight:750!important}
+#tssTutorialPage .ttCoach{padding:17px 19px!important}
+#tssTutorialPage .ttCoach p{font-size:18px!important;line-height:1.58!important}
+#tssTutorialPage .ttQuestion{padding:17px 19px!important}
+#tssTutorialPage .ttQuestion h4{font-size:16px!important;line-height:1.4!important}
+#tssTutorialPage .ttQuestion p,#tssTutorialPage .ttQuestion button{font-size:16px!important;line-height:1.45!important}
+@media(max-width:760px){#tssTutorialPage .ttFacts>div{min-height:0!important}#tssTutorialPage .ttFacts small{font-size:13px!important}#tssTutorialPage .ttFacts b{font-size:16px!important}#tssTutorialPage .ttCoach p{font-size:16px!important}}
+</style>
+<script id="pw-tss-plate-redesign-js-14626">
+(function(){
+ const esc=x=>String(x??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
+ function profile(){try{return {name:vesselName(),len:vesselDisplayLength(),type:vesselTypeText(),j:vesselRule10JApplies()}}catch(e){return {name:'Training vessel',len:'under 20 m',type:'vessel',j:true}}}
+ function defs(){return `<defs>
+  <marker id="pw26Red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ad514e"/></marker>
+  <marker id="pw26Green" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#07876a"/></marker>
+  <marker id="pw26Blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1677a4"/></marker>
+ </defs>`}
+ function ship(x,y,h,fill='#526f7c'){return `<g transform="translate(${x} ${y}) rotate(${h})"><path d="M0,-18 L10,10 L6,18 L-6,18 L-10,10 Z" fill="${fill}" stroke="#173847" stroke-width="2"/></g>`}
+ function pill(x,y,w,text,kind='navy'){const bg=kind==='green'?'#08785f':kind==='red'?'#a6403e':kind==='blue'?'#146b91':'#073244';return `<g><rect x="${x}" y="${y}" width="${w}" height="34" rx="9" fill="${bg}"/><text x="${x+w/2}" y="${y+22}" text-anchor="middle" class="p26pill">${esc(text)}</text></g>`}
+ function base(extraTop='') {return `${defs()}<rect width="900" height="560" fill="#f3ead5"/>${extraTop}
+  <rect x="70" y="105" width="760" height="105" rx="4" class="p26lane"/><rect x="70" y="230" width="760" height="70" rx="4" class="p26sep"/><rect x="70" y="320" width="760" height="105" rx="4" class="p26lane"/>
+  <path d="M115 158 H785" class="p26flow" marker-end="url(#pw26Red)"/><path d="M785 373 H115" class="p26flow" marker-end="url(#pw26Red)"/>
+  <text x="92" y="132" class="p26laneText">EASTBOUND TRAFFIC</text><text x="808" y="405" text-anchor="end" class="p26laneText">WESTBOUND TRAFFIC</text><text x="450" y="272" text-anchor="middle" class="p26zoneText">SEPARATION ZONE</text>`}
+ function style(){return `<style>
+ .p26lane{fill:#dce9ed;stroke:#547788;stroke-width:2}.p26sep{fill:#f2cece;stroke:#c06464;stroke-width:2;stroke-dasharray:10 7}.p26flow{stroke:#ad514e;stroke-width:7;fill:none}.p26laneText,.p26zoneText{font:800 17px system-ui,sans-serif;fill:#123e4e}.p26pill{font:800 14px system-ui,sans-serif;fill:white;letter-spacing:.2px}.p26note{font:800 15px system-ui,sans-serif;fill:#0a6d59}.p26warn{font:800 15px system-ui,sans-serif;fill:#a23838}.p26sub{font:700 14px system-ui,sans-serif;fill:#274d5b}.p26small{font:700 13px system-ui,sans-serif;fill:#274d5b}.p26good{stroke:#07876a;stroke-width:7;fill:none}.p26info{stroke:#1677a4;stroke-width:6;fill:none}.p26bad{stroke:#c74843;stroke-width:5;stroke-dasharray:10 8;fill:none}.p26box{fill:#fff9e9;stroke:#cbbd9f;stroke-width:1.5}
+ </style>`}
+ function plate(mode,p){
+  const pr=profile(),nm=esc(pr.name.toUpperCase()); p=Math.max(0,Math.min(1,Number(p)||0)); let x='';
+  if(mode==='layout'){
+   x=base()+ship(350,158,90)+ship(590,373,270)+pill(265,62,370,'READ THE WHOLE SCHEME BEFORE DECIDING')+
+   `<path d="M450 445 V500" class="p26info" marker-end="url(#pw26Blue)"/><text x="450" y="530" text-anchor="middle" class="p26sub">COAST / ITZ / LANES / FLOW / SEPARATION / YOUR ROUTE</text>`;
+  } else if(mode==='itz'){
+   x=`${defs()}<rect width="900" height="560" fill="#f3ead5"/><rect x="70" y="45" width="760" height="45" fill="#d5bf88"/><text x="95" y="74" class="p26laneText">COAST / INSHORE SIDE</text><rect x="70" y="100" width="760" height="78" rx="4" fill="#d9eee8" stroke="#579989" stroke-width="2" stroke-dasharray="9 6"/><text x="95" y="128" class="p26laneText">INSHORE TRAFFIC ZONE (ITZ)</text><path d="M215 150 H700" class="p26good" marker-end="url(#pw26Green)"/>${ship(210,150,90,'#08785f')}${pill(515,112,255,'PERMITTED ITZ USE','green')}<rect x="70" y="195" width="760" height="90" class="p26lane"/><path d="M115 240 H785" class="p26flow" marker-end="url(#pw26Red)"/><text x="92" y="220" class="p26laneText">EASTBOUND TRAFFIC</text><rect x="70" y="300" width="760" height="62" class="p26sep"/><text x="450" y="338" text-anchor="middle" class="p26zoneText">SEPARATION ZONE</text><rect x="70" y="378" width="760" height="90" class="p26lane"/><path d="M785 423 H115" class="p26flow" marker-end="url(#pw26Red)"/><text x="808" y="452" text-anchor="end" class="p26laneText">WESTBOUND TRAFFIC</text>${pill(85,495,300,pr.j?'UNDER 20 m / SAIL: MAY USE ITZ':'CHECK RULE 10(d)','green')}<text x="815" y="516" text-anchor="end" class="p26sub">ITZ ≠ EMPTY WATER OR A ONE-WAY LANE</text>`;
+  } else if(mode==='impede'){
+   const lane=300+140*p; x=base()+ship(lane,158,90)+ship(450,470,0,'#08785f')+pill(85,455,300,'WAIT CLEAR • FIND A SAFE GAP')+`<path d="M450 452 V414" class="p26bad"/><text x="485" y="468" class="p26warn">DO NOT FORCE A CROSSING</text><text x="${lane}" y="92" text-anchor="middle" class="p26sub">LANE-FOLLOWING POWER-DRIVEN VESSEL</text>`;
+  } else if(mode==='cross'){
+   x=base()+`<path d="M450 470 V72" class="p26good" marker-end="url(#pw26Green)"/>${ship(450,450,0,'#08785f')}<path d="M450 373 h40 v-40" stroke="#08785f" stroke-width="4" fill="none"/><text x="500" y="350" class="p26note">90° HEADING</text><path d="M285 475 L420 315" class="p26bad"/><path d="M615 475 L480 315" class="p26bad"/><text x="215" y="510" class="p26warn">✕ SHALLOW</text><text x="610" y="510" class="p26warn">SHALLOW ✕</text>${pill(300,50,300,'HEADING ≈ 90° TO TRAFFIC FLOW','green')}`;
+  } else if(mode==='zone'){
+   x=base()+ship(450,470,0,'#08785f')+`<path d="M450 452 V315" class="p26good"/><circle cx="450" cy="265" r="24" fill="#c74843"/><path d="M434 249 L466 281 M466 249 L434 281" stroke="white" stroke-width="5"/><text x="450" y="215" text-anchor="middle" class="p26warn">NOT A NORMAL WAITING AREA</text>${pill(255,470,390,'PLAN THE COMPLETE CROSSING BEFORE COMMITTING')}`;
+  } else if(mode==='follow'){
+   const xx=245+360*p; x=base()+`<path d="M150 158 H${xx}" class="p26good" marker-end="url(#pw26Green)"/>${ship(xx,158,90,'#08785f')}${pill(190,62,520,'IF USING A LANE: USE ITS GENERAL DIRECTION','green')}<text x="450" y="462" text-anchor="middle" class="p26note">KEEP CLEAR OF THE SEPARATION LINE / ZONE SO FAR AS PRACTICABLE</text>`;
+  } else if(mode==='join'){
+   x=base()+`<line x1="70" y1="105" x2="70" y2="210" stroke="#08785f" stroke-width="6"/><path d="M80 158 H340" class="p26good" marker-end="url(#pw26Green)"/><path d="M205 218 Q300 175 390 158" class="p26info" marker-end="url(#pw26Blue)"/>${pill(92,62,290,'PREFERRED: LANE TERMINATION','green')}<text x="220" y="245" class="p26sub">FROM THE SIDE: SMALL ANGLE TO TRAFFIC FLOW</text><text x="450" y="475" text-anchor="middle" class="p26sub">CROSSING AND JOINING ARE DIFFERENT MANOEUVRES</text>`;
+  } else if(mode==='final'){
+   const yy=470-390*Math.max(0,Math.min(1,(p-.15)/.75)); x=base()+`<path d="M450 470 V70" class="p26good" marker-end="url(#pw26Green)"/>${ship(450,yy,0,'#08785f')}${ship(300,158,90)}${ship(620,373,270)}${pill(95,458,710,'READ → ASSESS → SAFE GAP → 90° HEADING → CROSS CONTINUOUSLY → KEEP WATCH','green')}<text x="450" y="92" text-anchor="middle" class="p26note">RULE 10 WORKS WITH THE OTHER APPLICABLE COLREGS</text>`;
+  } else {x=base()+pill(270,470,360,'RULE 10 • BUILD THE TRAFFIC PICTURE');}
+  return `<svg class="pwTssPlate26" viewBox="0 0 900 560" role="img" aria-label="Rule 10 traffic separation teaching diagram">${style()}${x}</svg>`;
+ }
+ window.ttDraw=function(mode,p){const d=document.getElementById('ttDemo');if(d)d.innerHTML=plate(mode,p)};
+ try{if(document.getElementById('tssTutorialPage')?.classList.contains('active'))ttRender()}catch(e){}
+})();
+</script>
 </body></html>
