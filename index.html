@@ -24704,4 +24704,88 @@ window.addEventListener('load',()=>{pwBrandApply();pwFixVesselSwitcher();try{ada
  const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.49-PLATFORM-TYPOGRAPHY-STANDARD';
 })();
 </script>
+
+
+<!-- Build 1.46.50 — unified responsive typography architecture.
+     Visual reference: approved Lights & Shapes library / Voyage readability hierarchy.
+     CSS-only typography layer. Artwork/SVG/canvas geometry and application logic are untouched. -->
+<style id="pw-unified-typography-architecture-14650">
+:root{
+  --pw-type-display:clamp(2rem,2.2vw + 1rem,3.25rem);
+  --pw-type-page:clamp(1.65rem,1.35vw + .85rem,2.35rem);
+  --pw-type-section:clamp(1.28rem,.8vw + .85rem,1.75rem);
+  --pw-type-card:clamp(1.05rem,.38vw + .92rem,1.28rem);
+  --pw-type-body:clamp(.98rem,.22vw + .91rem,1.14rem);
+  --pw-type-secondary:clamp(.84rem,.16vw + .80rem,.98rem);
+  --pw-type-meta:clamp(.72rem,.12vw + .69rem,.84rem);
+  --pw-type-control:clamp(.88rem,.18vw + .82rem,1rem);
+  --pw-type-question:clamp(1.04rem,.28vw + .96rem,1.25rem);
+  --pw-line-body:1.48;--pw-line-tight:1.18;
+  /* Compatibility aliases: one control panel now drives the legacy typography layers too. */
+  --pw-body:var(--pw-type-body);--pw-small:var(--pw-type-secondary);--pw-micro:var(--pw-type-meta);
+  --pw-control:var(--pw-type-control);--pw-h3:var(--pw-type-card);--pw-h2:var(--pw-type-page);--pw-h1:var(--pw-type-display);
+  --pw-fs-body:var(--pw-type-body);--pw-fs-small:var(--pw-type-secondary);--pw-fs-micro:var(--pw-type-meta);
+  --pw-fs-label:var(--pw-type-meta);--pw-fs-control:var(--pw-type-control);--pw-fs-subhead:var(--pw-type-card);
+  --pw-fs-heading:var(--pw-type-page);--pw-fs-display:var(--pw-type-display);
+}
+/* Semantic HTML typography. Deliberately excludes SVG/canvas and text drawn inside approved artwork. */
+.appPage,.panel,.card,.lesson,.module{font-size:var(--pw-type-body)}
+.appPage p,.appPage li,.appPage dd,.appPage dt,.appPage td,.appPage th,
+.panel p,.card p,.lesson p,.module p,.note,.courseIntro,.moduleIntro,.lessonText,.referenceText,.debriefText,
+[class*="Copy"],[class*="copy"],[class*="Description"],[class*="description"],[class*="Instructions"],[class*="instructions"]{
+  font-size:var(--pw-type-body)!important;line-height:var(--pw-line-body)!important;
+}
+h1,.heroTitle{font-size:var(--pw-type-display)!important;line-height:1.06!important}
+h2,.sectionTitle{font-size:var(--pw-type-page)!important;line-height:1.12!important}
+h3,.moduleTitle,.scenarioTitle{font-size:var(--pw-type-section)!important;line-height:var(--pw-line-tight)!important}
+h4,h5,h6,.cardTitle,[class*="cardTitle"],[class*="CardTitle"]{font-size:var(--pw-type-card)!important;line-height:1.22!important}
+button,.btn,[role="button"],a.button,input[type="button"],input[type="submit"],select{font-size:var(--pw-type-control)!important;line-height:1.18!important}
+small,.small,.mini,.muted,.hint,.sub,.eyebrow,.kicker,.build,.ver,
+[class*="meta"],[class*="Meta"],[class*="caption"],[class*="Caption"]{font-size:var(--pw-type-secondary)!important;line-height:1.32!important}
+.tag,.pill,.chip,.badge,[class*="tag"],[class*="Tag"],[class*="pill"],[class*="Pill"],[class*="badge"],[class*="Badge"],
+.dataLabel,.statLabel,.instrument label{font-size:var(--pw-type-meta)!important;line-height:1.2!important}
+/* Assessment hierarchy. */
+.crQuizQ,.quizQuestion,.examQuestion,.questionText,[class*="QuestionText"],[class*="questionText"]{font-size:var(--pw-type-question)!important;line-height:1.32!important}
+.crQuizOpts button,.quizOptions button,.answerOption,.examAnswers button{font-size:var(--pw-type-body)!important;line-height:1.28!important}
+/* Legacy lesson navigation and explanatory boxes: lift old 6–11px rules into the same hierarchy. */
+.stage2LessonNav small,.sigLessonNav small,.s5LessonNav small,.ttLessonNav small,.aisLessonStrip small,
+.collisionLessonNav small,[class*="LessonNav"] small{font-size:var(--pw-type-meta)!important}
+.stage2LessonNav b,.sigLessonNav b,.s5LessonNav b,.ttLessonNav b,.aisLessonStrip b,
+.collisionLessonNav b,[class*="LessonNav"] b{font-size:var(--pw-type-secondary)!important;line-height:1.25!important}
+.crFact span,.lsFact p,.sigFact p,.s5Fact p,.btFacts p,.ttFacts span,.ttCoach p,.aisLearnCard p,
+.contextRuleCard p,.ruleCard p,.detailCard p,.debriefCard p,.scenarioCard p,
+.coachCard p,.collisionBrief,.watchObjective,.assessmentFocus{font-size:var(--pw-type-body)!important;line-height:var(--pw-line-body)!important}
+.crFact b,.lsFact b,.sigFact b,.s5Fact b,.btFacts b,.ttFacts b,.aisLearnCard h3,.aisLearnCard h4,
+.contextRuleCard h4,.ruleCard h4,.detailCard h4,.debriefCard h4,.scenarioCard h4{font-size:var(--pw-type-card)!important}
+/* Home/course cards: no more microscopic tick lists or completion guidance. */
+.homePage li,.coursePage li,.courseCard li,.stageCard li,.moduleCard li,
+.homePage .pwCompleteNote,.coursePage .pwCompleteNote,.courseCard .pwCompleteNote,.stageCard .pwCompleteNote,
+.homePage small,.coursePage small{font-size:var(--pw-type-secondary)!important;line-height:1.35!important}
+/* Collision beginner/simulator HTML panels — diagrams themselves remain untouched. */
+.collisionCourse p,.collisionCourse .lessonFact,.collisionCourse .lessonFact p,.collisionCourse .lessonFact span,
+.collisionCourse [class*="Fact"] p,.collisionCourse [class*="Brief"] p,
+.collisionScenarioPage [class*="objective"],.collisionScenarioPage [class*="focus"]{font-size:var(--pw-type-body)!important;line-height:var(--pw-line-body)!important}
+/* Protect intentionally compact header subtitles while keeping them legible. */
+#pwWatch1Btn::after,#pwWatch2Btn::after,#pwCustomBtn::after{font-size:var(--pw-type-meta)!important}
+/* Phone: hierarchy compresses but body text never collapses to legacy micro sizes. */
+@media(max-width:767px){
+ :root{--pw-type-display:clamp(1.85rem,8vw,2.5rem);--pw-type-page:clamp(1.45rem,6vw,2rem);
+ --pw-type-section:clamp(1.2rem,4.8vw,1.55rem);--pw-type-card:clamp(1rem,4vw,1.2rem);
+ --pw-type-body:clamp(.95rem,3.7vw,1.05rem);--pw-type-secondary:clamp(.82rem,3.2vw,.92rem);
+ --pw-type-meta:clamp(.72rem,2.8vw,.8rem);--pw-type-control:clamp(.86rem,3.3vw,.96rem);--pw-type-question:clamp(1rem,4vw,1.15rem)}
+}
+/* Tablet/iPad: calibrated to the approved Lights & Shapes / Voyage visual standard. */
+@media(min-width:768px) and (max-width:1366px){
+ :root{--pw-type-display:2.45rem;--pw-type-page:1.85rem;--pw-type-section:1.42rem;--pw-type-card:1.12rem;
+ --pw-type-body:1rem;--pw-type-secondary:.88rem;--pw-type-meta:.76rem;--pw-type-control:.92rem;--pw-type-question:1.08rem}
+}
+/* Desktop: modest growth only; prevent giant typography on wide monitors. */
+@media(min-width:1600px){
+ :root{--pw-type-display:3rem;--pw-type-page:2.15rem;--pw-type-section:1.6rem;--pw-type-card:1.22rem;
+ --pw-type-body:1.08rem;--pw-type-secondary:.95rem;--pw-type-meta:.82rem;--pw-type-control:1rem;--pw-type-question:1.18rem}
+}
+</style>
+<script id="pw-unified-typography-marker-14650">
+(function(){window.PW_TYPOGRAPHY_ARCHITECTURE={version:'1.46.50',reference:'Lights & Shapes / Voyage',responsive:true};window.PROJECT_WATCH_BUILD='1.46.50-UNIFIED-TYPOGRAPHY-ARCHITECTURE';const vb=document.getElementById('pwVisibleBuild');if(vb)vb.textContent='BUILD 1.46.50-UNIFIED-TYPOGRAPHY-ARCHITECTURE';})();
+</script>
 </body></html>
